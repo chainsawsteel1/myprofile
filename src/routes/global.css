@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+
+:root {
+    --navbar-color: rgb(52, 48, 80);
+    --bg-color: rgb(38, 35, 63);
+    --text-color: rgb(221, 216, 255);
+    --dtext-color: rgb(24, 19, 61);
+    --link-color: rgb(201, 193, 255);
+    --btn-color: rgb(201, 193, 255);
+    --hov-color: rgb(180, 169, 255);
+    --load-color: rgb(221, 216, 255);
+    --shadow-color: rgb(99, 93, 132);
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'IBM Plex Sans JP', sans-serif;
+}
+
+button{
+    background-color: var(--btn-color);
+    color: var(--dtext-color);
+    transition: .4s;
+    padding: .5em;
+    min-width: 5em;
+}
+
+button:hover {
+    box-shadow: 10px -10px var(--shadow-color);
+    background-color: var(--hov-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+/* レスポンシブ対応しろ */
+article {
+    padding-top: 5em;
+    margin: auto;
+    width: 600px;
+}
