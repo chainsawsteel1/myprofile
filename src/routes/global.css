@@ -1,11 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap");
 
 :root {
     --navbar-color: rgb(52, 48, 80);
     --bg-color: rgb(38, 35, 63);
     --text-color: rgb(221, 216, 255);
     --dtext-color: rgb(24, 19, 61);
-    --link-color: rgb(201, 193, 255);
+    --link-color: rgb(24, 19, 61);
+    --navtxt-color: rgb(201, 193, 255);
     --btn-color: rgb(201, 193, 255);
     --hov-color: rgb(180, 169, 255);
     --load-color: rgb(221, 216, 255);
@@ -15,19 +16,20 @@
 body {
     background: var(--bg-color);
     color: var(--text-color);
-    font-family: 'IBM Plex Sans JP', sans-serif;
+    font-family: "IBM Plex Sans JP", sans-serif;
+    overflow-x: hidden;
 }
 
 button{
     background-color: var(--btn-color);
     color: var(--dtext-color);
-    transition: .4s;
-    padding: .5em;
+    transition: .3s;
+    padding: .4em;
     min-width: 5em;
 }
 
 button:hover {
-    box-shadow: 10px -10px var(--shadow-color);
+    box-shadow: 7px 7px var(--shadow-color);
     background-color: var(--hov-color);
 }
 
@@ -40,5 +42,25 @@ a {
 article {
     padding-top: 5em;
     margin: auto;
-    width: 600px;
+    width: 95%;
+}
+
+.box {
+    container-type: inline-size;
+}
+
+.toph1 {
+    background:linear-gradient(var(--text-color), var(--shadow-color));
+
+	-webkit-background-clip:text;
+    background-clip:text;
+	-webkit-text-fill-color: transparent;
+}
+
+@container (min-width: 735px) {
+    article {
+        padding-top: 5em;
+        margin: auto;
+        width: 700px;
+    }
 }

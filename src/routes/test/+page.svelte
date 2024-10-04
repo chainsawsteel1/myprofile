@@ -1,4 +1,7 @@
 <script>
+    import { MetaTags } from "svelte-meta-tags";
+    import { page } from "$app/stores";
+
     import Swal from "sweetalert2";
     import toast from "svelte-french-toast";
 
@@ -13,7 +16,7 @@
 </script>
 
 <main>
-    <h1>TEST</h1>
+    <h1 class="toph1">TEST</h1>
 
     <article>
 
@@ -24,3 +27,13 @@
 
     </article>
 </main>
+
+<MetaTags
+    title="TEST"
+    openGraph={{
+        type: 'website',
+        url: $page.url.href,
+        title: 'TEST',
+        description: 'chainsのサイト - TEST',
+    }}
+/>

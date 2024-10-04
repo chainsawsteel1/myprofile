@@ -27,9 +27,15 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@types/react": "^18.3.11",
 		"nprogress": "^0.2.0",
+		"react": "^18.3.1",
 		"ress": "^5.0.2",
+		"satori": "^0.11.1",
+		"sharp": "^0.33.5",
+		"super-sitemap": "^0.15.1",
 		"svelte-french-toast": "^1.2.0",
+		"svelte-meta-tags": "^3.1.4",
 		"sweetalert2": "^11.14.1"
 	}
 }
