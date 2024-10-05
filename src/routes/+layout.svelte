@@ -105,6 +105,7 @@
 
     .loading {
         position: fixed;
+        bottom: 0%;
     }
 
     @container (min-width: 735px) {
