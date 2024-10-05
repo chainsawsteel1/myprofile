@@ -4,6 +4,7 @@
     import "./alert.css";
     import "./toast.css";
     import "./nprogress.css";
+    import "./loadanim.css"
     
     import { onNavigate } from "$app/navigation";
     import { navigating } from "$app/stores";
@@ -12,6 +13,8 @@
     import { movepg } from '$lib/utils';
     import { onMount } from "svelte";
     import { afterNavigate } from "$app/navigation";
+    import { setupViewTransition } from 'sveltekit-view-transition';
+
 
     import NProgress from "nprogress";
 
@@ -33,16 +36,7 @@
         }
 	}
 
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
-
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
-    });
+    setupViewTransition();
 
     /**
 	 * @type {string}
@@ -60,6 +54,12 @@
         gettitle(); // 移動先のページのタイトルを取得
     });
 </script>
+
+{#if $navigating}
+	<div class="loading">
+        <h1>Loading...</h1>
+    </div>
+{/if}
 
 <h1 class="toph1">{title}</h1>
 
@@ -101,6 +101,10 @@
         width: 100%;
         height: 100%;
         z-index: -1;
+    }
+
+    .loading {
+        position: fixed;
     }
 
     @container (min-width: 735px) {

@@ -1,7 +1,6 @@
 <script>
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
-    import PGTITLE from "../components/PGTITLE.svelte";
 </script>
 
 <main>
