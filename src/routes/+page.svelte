@@ -8,7 +8,7 @@
     <h1 class="toph1">HOME</h1>
 
     <article>
-        <h1>WIP</h1>
+        <h2>WIP</h2>
         <p>サイトをまた新しく作り変えた</p>
     </article>
 </main>

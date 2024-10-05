@@ -14,13 +14,15 @@
 }
 
 body {
-    background: var(--bg-color);
+    background: black;
     color: var(--text-color);
     font-family: "IBM Plex Sans JP", sans-serif;
     overflow-x: hidden;
 }
 
 button{
+    margin-top: .1em;
+    margin-bottom: .1em;
     background-color: var(--btn-color);
     color: var(--dtext-color);
     transition: .3s;
@@ -34,8 +36,21 @@ button:hover {
 }
 
 a {
-    color: var(--link-color);
+    margin-top: .1em;
+    margin-bottom: .1em;
+    text-align: center;
+    background-color: var(--btn-color);
+    display: inline-block;
+    color: var(--dtext-color);
+    transition: .3s;
+    padding: .4em;
+    min-width: 5em;
     text-decoration: none;
+}
+
+a:hover {
+    box-shadow: 7px 7px var(--shadow-color);
+    background-color: var(--hov-color);
 }
 
 /* レスポンシブ対応しろ */
@@ -50,17 +65,35 @@ article {
 }
 
 .toph1 {
-    background:linear-gradient(var(--text-color), var(--shadow-color));
-
+    width: 5em;
+    height: 1.4em;
+    position: fixed;
+    background: linear-gradient(var(--text-color), var(--shadow-color));
+    text-align: right;
 	-webkit-background-clip:text;
     background-clip:text;
 	-webkit-text-fill-color: transparent;
+    transition: .3s;
+    z-index: -2;
+    transform: rotate(90deg) scale(5);
+    opacity: 30%;
+    bottom: 12em;
+    right: 0;
 }
 
 @container (min-width: 735px) {
     article {
-        padding-top: 5em;
+        padding-top: 7em;
         margin: auto;
         width: 700px;
+    }
+    .toph1 {
+        padding-left: .2em;
+        width: 5em;
+        text-align: left;
+        opacity: 100%;
+        transform: rotate(0deg) scale(1);
+        top: 0;
+        left: 0;
     }
 }

@@ -22,7 +22,6 @@
 
         <button on:click="{handleClick}">a</button>
         <br>
-        <br>
         <button on:click="{handleClick2}">b</button>
 
     </article>

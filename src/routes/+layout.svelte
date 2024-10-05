@@ -1,44 +1,21 @@
 <script>
-    import 'ress'
+    import "ress"
     import "./global.css";
-    import './nprogress.css';
+    import "./alert.css";
+    import "./toast.css";
+    import "./nprogress.css";
     
-    import { onNavigate } from '$app/navigation';
-    import { navigating } from '$app/stores';
+    import { onNavigate } from "$app/navigation";
+    import { navigating } from "$app/stores";
     import { page } from "$app/stores";
-    import { goto } from "$app/navigation";
-    import { Toaster } from 'svelte-french-toast';
-    import toast from "svelte-french-toast";
+    import { Toaster } from "svelte-french-toast";
+    import { movepg } from '$lib/utils';
 
-
-    import NProgress from 'nprogress';
+    import NProgress from "nprogress";
 
     NProgress.configure({
     showSpinner: false // スピナーを表示しない
     });
-
-    /**
-     * @param {string | URL} url
-     */
-    const movepg = (url) => {
-        if ($page.url.origin + url == $page.url.href) {
-            toast.error('既にそのページに居ます', {
-                position: "bottom-center"
-            })
-        } else {
-            goto(url);
-        }
-    }
-
-    const respui = () => {
-        let winW = window.innerWidth
-        let devW = 650;
-        if (winW <= devW) {
-
-        } else {
-            
-        }
-    }
 
 	$: {
 		if ($navigating) {
@@ -55,25 +32,23 @@
 	}
 
     onNavigate((navigation) => {
-    if (!document.startViewTransition) return;
+        if (!document.startViewTransition) return;
 
-    return new Promise((resolve) => {
-        document.startViewTransition(async () => {
-            resolve();
-            await navigation.complete;
+        return new Promise((resolve) => {
+            document.startViewTransition(async () => {
+                resolve();
+                await navigation.complete;
+            });
         });
     });
-
-    window.addEventListener('resize', respui);
-});
 </script>
 
 <div class="box">
 
     <nav>
-        <button id="home" on:click="{() => movepg("/")}">HOME</button>
-        <button id="blog" on:click="{() => movepg("/blog")}">BLOG</button>
-        <button id="link" on:click="{() => movepg("/link")}">LINK</button>
+        <button on:click="{() => movepg("/")}">HOME</button>
+        <button on:click="{() => movepg("/blog")}">BLOG</button>
+        <button on:click="{() => movepg("/link")}">LINK</button>
     </nav>
 
     <slot />
@@ -81,14 +56,45 @@
 
 <div><Toaster/></div>
 
+<div class="bg"></div>
+
 <style>
     nav {
         margin: auto;
         position: fixed;
         text-align: center;
         left: 50%;
-        top: 3.8em;
+        top: 2em;
         width: 100%;
         transform: translate(-50%, -50%);
+    }
+
+    button {
+        min-width: 30%;
+    }
+
+    .bg {
+        background: linear-gradient(rgba(0, 0, 0, 0), var(--bg-color));
+        position: fixed;
+        top: 0;
+        height: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    @container (min-width: 735px) {
+        nav {
+            margin: auto;
+            position: fixed;
+            text-align: center;
+            left: 50%;
+            top: 3.5em;
+            width: 100%;
+            transform: translate(-50%, -50%);
+        }
+        button {
+            min-width: 5em;
+        }
     }
 </style>

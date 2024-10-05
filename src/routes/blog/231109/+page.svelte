@@ -15,7 +15,7 @@
 </script>
 
 <main>
-    <h1 class="toph1">221201</h1>
+    <h1 class="toph1">231109</h1>
 
     <article>
         {@html md}
@@ -26,11 +26,11 @@
 </main>
 
 <MetaTags
-    title="221201"
+    title="231109"
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: '221201',
-        description: 'chainsのサイト - 人生たのヴェントカレンダー🎶(アーカイブ)',
+        title: '231109',
+        description: 'chainsのサイト - 新技術入手',
     }}
 />
