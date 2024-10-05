@@ -15,8 +15,6 @@
 </script>
 
 <main>
-    <h1 class="toph1">231109</h1>
-
     <article>
         {@html md}
 

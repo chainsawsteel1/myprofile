@@ -15,8 +15,6 @@
 </script>
 
 <main>
-    <h1 class="toph1">LINK</h1>
-
     <article>
         <div class="sns">
             <h2>SNS</h2>

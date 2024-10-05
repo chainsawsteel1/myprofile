@@ -8,11 +8,19 @@
     function handleClick() {
         Swal.fire("SweetAlert2 is working!");
     }
+
     function handleClick2() {
         toast.success('Successfully toasted!', {
             position: "top-right"
         })
     }
+
+    var options = {
+        strings: ['<i>First</i> sentence.', '&amp; a second sentence.'],
+        typeSpeed: 40
+    };
+
+    var typed = new Typed('.element', options);
 </script>
 
 <main>
@@ -22,7 +30,10 @@
 
         <button on:click="{handleClick}">a</button>
         <br>
+        <br>
         <button on:click="{handleClick2}">b</button>
+
+        <div class="element"></div>
 
     </article>
 </main>

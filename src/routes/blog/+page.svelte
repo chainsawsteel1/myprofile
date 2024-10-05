@@ -6,8 +6,6 @@
 </script>
 
 <main>
-    <h1 class="toph1">BLOG</h1>
-
     <article>
         <button on:click="{() => movepg("/blog/221201")}">221201 - 人生たのヴェントカレンダー🎶(アーカイブ)</button>
         <br>

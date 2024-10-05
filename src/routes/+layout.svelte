@@ -10,6 +10,8 @@
     import { page } from "$app/stores";
     import { Toaster } from "svelte-french-toast";
     import { movepg } from '$lib/utils';
+    import { onMount } from "svelte";
+    import { afterNavigate } from "$app/navigation";
 
     import NProgress from "nprogress";
 
@@ -41,7 +43,25 @@
             });
         });
     });
+
+    /**
+	 * @type {string}
+	 */
+    let title
+    const gettitle = () => {
+        title = document.title; // 現在のページのタイトルを取得
+    };
+
+    onMount(() => {
+        gettitle()
+    })
+
+    afterNavigate(() => {
+        gettitle(); // 移動先のページのタイトルを取得
+    });
 </script>
+
+<h1 class="toph1">{title}</h1>
 
 <div class="box">
 
@@ -85,13 +105,7 @@
 
     @container (min-width: 735px) {
         nav {
-            margin: auto;
-            position: fixed;
-            text-align: center;
-            left: 50%;
             top: 3.5em;
-            width: 100%;
-            transform: translate(-50%, -50%);
         }
         button {
             min-width: 5em;
