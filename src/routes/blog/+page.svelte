@@ -43,6 +43,7 @@
         height: 15em;
         width: 22em;
         margin: 1em;
+        overflow: hidden;
     }
 
     .lists {
