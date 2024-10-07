@@ -3,19 +3,82 @@
     import { page } from "$app/stores";
 
     import { movepg } from '$lib/utils';
+
+    import { setupViewTransition } from 'sveltekit-view-transition';
+    const { transition } = setupViewTransition();
+
+    export let data
 </script>
 
 <main>
     <article>
-        <button on:click="{() => movepg("/blog/221201")}">221201 - 人生たのヴェントカレンダー🎶(アーカイブ)</button>
+        <button class="old" on:click="{() => movepg("/blog/old")}">旧フォーマットで書かれたやつはこちら</button>
+
         <br>
-        <button on:click="{() => movepg("/blog/221204")}">221201 - えとるねん(アーカイブ)</button>
         <br>
-        <button on:click="{() => movepg("/blog/231109")}">231109 - 新技術入手</button>
-        <br>
-        <button on:click="{() => movepg("/blog/231111")}">231111 - 人生たのベントカレンダー🎶 Advent Calendar 2023</button>
+
+        <div class="lists">
+            {#each data.contents as content}
+                <button class="bg" on:click="{() => movepg("/blog/" + content.id)}">
+                    {content.title}
+                    <img use:transition={content.title} src={content.eyecatch?.url} alt="" />
+                </button>
+            {/each}
+        </div>
     </article>
 </main>
+
+<style>
+    button {
+        width: 22em;
+    }
+
+    .bg img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .bg {
+        height: 15em;
+        width: 22em;
+        margin: 1em;
+    }
+
+    .lists {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+    article {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .old {
+        position: fixed;
+        top: 7em;
+        left: 50%;
+        margin: auto;
+        transform: translate(-50%, -50%);
+    }
+
+    @container (min-width: 820px) {
+        article {
+            justify-content: left;
+            align-items: left;
+            flex-direction: row;
+        }
+
+        .lists {
+            flex-direction: row;
+            justify-content: center;
+        }
+    }
+</style>
 
 <MetaTags
     title="BLOG"

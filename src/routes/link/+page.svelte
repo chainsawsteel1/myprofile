@@ -51,6 +51,12 @@
     </article>
 </main>
 
+<style>
+    img {
+        width: 300px;
+    }
+</style>
+
 <MetaTags
     title="LINK"
     openGraph={{

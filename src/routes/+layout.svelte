@@ -65,7 +65,13 @@
 
 <div class="box">
 
-    <nav>
+    <nav class="phone">
+        <button on:click="{() => movepg("/")}">HOME</button>
+        <button on:click="{() => movepg("/blog")}">BLOG</button>
+        <button on:click="{() => movepg("/link")}">LINK</button>
+    </nav>
+
+    <nav class="computer">
         <button on:click="{() => movepg("/")}">HOME</button>
         <button on:click="{() => movepg("/blog")}">BLOG</button>
         <button on:click="{() => movepg("/link")}">LINK</button>
@@ -79,7 +85,7 @@
 <div class="bg"></div>
 
 <style>
-    nav {
+    .phone {
         margin: auto;
         position: fixed;
         text-align: center;
@@ -90,7 +96,16 @@
     }
 
     button {
-        min-width: 30%;
+        background-color: rgba(0, 0, 0, 0);
+        color: var(--txt-color);
+        margin: .8em;
+        min-width: 25%;
+    }
+
+    nav {
+        height: 4em;
+        background-color: var(--bg-color5);
+        backdrop-filter: blur(1.5em);
     }
 
     .bg {
@@ -108,12 +123,23 @@
         bottom: 0%;
     }
 
+    .computer {
+        display: none;
+    }
+
     @container (min-width: 735px) {
-        nav {
-            top: 3.5em;
+        .computer {
+            display: inline;
+            margin: auto;
+            position: fixed;
+            text-align: center;
+            left: 50%;
+            top: 2em;
+            width: 100%;
+            transform: translate(-50%, -50%);
         }
-        button {
-            min-width: 5em;
+        .phone {
+            display: none;
         }
     }
 </style>

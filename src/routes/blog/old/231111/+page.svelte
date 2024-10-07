@@ -19,16 +19,16 @@
         {@html md}
 
         <br>
-        <button on:click="{() => movepg("/blog")}">BACK</button>
+        <button on:click="{() => movepg("/blog/old")}">BACK</button>
     </article>
 </main>
 
 <MetaTags
-    title="221204"
+    title="231111"
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: '221204',
-        description: 'chainsのサイト - えとるねん(アーカイブ)',
+        title: '231111',
+        description: 'chainsのサイト - 人生たのベントカレンダー🎶 Advent Calendar 2023',
     }}
 />
