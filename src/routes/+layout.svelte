@@ -63,20 +63,13 @@
 
 <h1 class="toph1">{title}</h1>
 
+<nav>
+    <button on:click="{() => movepg("/")}">HOME</button>
+    <button on:click="{() => movepg("/blog")}">BLOG</button>
+    <button on:click="{() => movepg("/link")}">LINK</button>
+</nav>
+
 <div class="box">
-
-    <nav class="phone">
-        <button on:click="{() => movepg("/")}">HOME</button>
-        <button on:click="{() => movepg("/blog")}">BLOG</button>
-        <button on:click="{() => movepg("/link")}">LINK</button>
-    </nav>
-
-    <nav class="computer">
-        <button on:click="{() => movepg("/")}">HOME</button>
-        <button on:click="{() => movepg("/blog")}">BLOG</button>
-        <button on:click="{() => movepg("/link")}">LINK</button>
-    </nav>
-
     <slot />
 </div>
 
@@ -85,16 +78,6 @@
 <div class="bg"></div>
 
 <style>
-    .phone {
-        margin: auto;
-        position: fixed;
-        text-align: center;
-        left: 50%;
-        top: 2em;
-        width: 100%;
-        transform: translate(-50%, -50%);
-    }
-
     button {
         background-color: rgba(0, 0, 0, 0);
         color: var(--txt-color);
@@ -106,6 +89,14 @@
         height: 4em;
         background-color: var(--bg-color5);
         backdrop-filter: blur(1.5em);
+        margin: auto;
+        position: fixed;
+        z-index: 1;
+        text-align: center;
+        left: 50%;
+        top: 2em;
+        width: 100%;
+        transform: translate(-50%, -50%);
     }
 
     .bg {
@@ -123,10 +114,6 @@
         bottom: 0%;
     }
 
-    .computer {
-        display: none;
-    }
-
     @container (min-width: 735px) {
         .computer {
             display: inline;
@@ -137,9 +124,6 @@
             top: 2em;
             width: 100%;
             transform: translate(-50%, -50%);
-        }
-        .phone {
-            display: none;
         }
     }
 </style>

@@ -4,6 +4,8 @@
 
     import { movepg } from '$lib/utils';
 
+    import tippy from "svelte-tippy";
+
     import { setupViewTransition } from 'sveltekit-view-transition';
     const { transition } = setupViewTransition();
 
@@ -11,12 +13,9 @@
 </script>
 
 <main>
+    <button class="old" id="old" on:click="{() => movepg("/blog/old")}" use:tippy={{content: '旧フォーマットで書かれたやつはこちら', placement: 'top'}}>旧</button>
+
     <article>
-        <button class="old" on:click="{() => movepg("/blog/old")}">旧フォーマットで書かれたやつはこちら</button>
-
-        <br>
-        <br>
-
         <div class="lists">
             {#each data.contents as content}
                 <button class="bg" on:click="{() => movepg("/blog/" + content.id)}">
@@ -61,10 +60,11 @@
 
     .old {
         position: fixed;
-        top: 7em;
-        left: 50%;
+        bottom: 1em;
+        left: 1em;
         margin: auto;
-        transform: translate(-50%, -50%);
+        width: 5em;
+        height: 5em;
     }
 
     @container (min-width: 820px) {
@@ -77,6 +77,11 @@
         .lists {
             flex-direction: row;
             justify-content: center;
+        }
+
+        .old {
+            bottom: unset;
+            top: 5em;
         }
     }
 </style>
