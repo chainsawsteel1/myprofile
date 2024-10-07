@@ -62,9 +62,13 @@
         position: fixed;
         bottom: 1em;
         left: 1em;
+        top: unset;
         margin: auto;
         width: 5em;
         height: 5em;
+        background-color: var(--bg-color5);
+        color: var(--txt-color);
+        backdrop-filter: blur(1.5em);
     }
 
     @container (min-width: 820px) {
