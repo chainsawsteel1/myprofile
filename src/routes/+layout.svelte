@@ -14,6 +14,8 @@
     import { onMount } from "svelte";
     import { afterNavigate } from "$app/navigation";
     import { setupViewTransition } from 'sveltekit-view-transition';
+    import Swal from "sweetalert2";
+    import { List, Border } from "svelte-bootstrap-icons";
 
 
     import NProgress from "nprogress";
@@ -53,6 +55,21 @@
     afterNavigate(() => {
         gettitle(); // 移動先のページのタイトルを取得
     });
+
+    function menu() {
+        Swal.fire({
+            title: "MENU",
+            html: `
+                <a href="/">HOME</a>
+                <br>
+                <a href="/blog">BLOG</a>
+                <br>
+                <a href="/link">LINK</a>
+            `,
+            color: "var(--dtext-color)",
+            background: "var(--btn-color)",
+        });
+    }
 </script>
 
 {#if $navigating}
@@ -64,9 +81,26 @@
 <h1 class="toph1">{title}</h1>
 
 <nav>
-    <button on:click="{() => movepg("/")}">HOME</button>
-    <button on:click="{() => movepg("/blog")}">BLOG</button>
-    <button on:click="{() => movepg("/link")}">LINK</button>
+    <div class="logo">
+        <button class="side" on:click="{() => movepg("/")}"><img src="/favicon.png" alt="chains"></button>
+    </div>
+
+    <div class="link pc">
+        <button on:click="{() => movepg("/")}">HOME</button>
+        <button on:click="{() => movepg("/blog")}">BLOG</button>
+        <button on:click="{() => movepg("/link")}">LINK</button>
+    </div>
+
+    <div class="link sp">
+    </div>
+
+    <div class="menu pc">
+        <button class="side"><Border  width={35} height={35}/></button>
+    </div>
+
+    <div class="menu sp">
+        <button class="side" on:click="{menu}"><List  width={45} height={45}/></button>
+    </div>
 </nav>
 
 <div class="box">
@@ -82,7 +116,20 @@
         background-color: rgba(0, 0, 0, 0);
         color: var(--txt-color);
         margin: .8em;
-        min-width: 25%;
+        min-width: 5em;
+    }
+
+    .logo {
+        width: 5em;
+    }
+
+    .menu {
+        width: 5em;
+    }
+
+    .link {
+        align-items: center;
+        margin: auto;
     }
 
     nav {
@@ -97,6 +144,9 @@
         top: 2em;
         width: 100%;
         transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: row;
+        container-type: inline-size;
     }
 
     .bg {
@@ -114,16 +164,32 @@
         bottom: 0%;
     }
 
-    @container (min-width: 735px) {
-        .computer {
+    .sp {
+        display: none;
+    }
+
+    .side {
+        min-width: unset;
+        width: 3.5em;
+        height: 4em;
+        margin: auto;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .side:hover {
+        box-shadow: unset;
+    }
+
+    @container (max-width: 600px) {
+        .pc {
+            display: none;
+        }
+        .sp {
             display: inline;
-            margin: auto;
-            position: fixed;
-            text-align: center;
-            left: 50%;
-            top: 2em;
-            width: 100%;
-            transform: translate(-50%, -50%);
         }
     }
 </style>

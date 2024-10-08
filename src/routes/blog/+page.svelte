@@ -19,8 +19,8 @@
         <div class="lists">
             {#each data.contents as content}
                 <button class="bg" on:click="{() => movepg("/blog/" + content.id)}">
-                    {content.title}
-                    <img use:transition={content.title} src={content.eyecatch?.url} alt="" />
+                    <p class="inbox" use:transition={content.title}>{content.title}</p>
+                    <img class="inbox" use:transition={content.title + "i"} src={content.eyecatch?.url} alt="" />
                 </button>
             {/each}
         </div>

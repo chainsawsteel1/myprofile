@@ -14,14 +14,16 @@
     <article>
         <button on:click="{() => movepg("/blog")}">BACK</button>
         <div class="title">
-            <h2>{data.title}</h2>
-            <img use:transition={data.title} src={data.eyecatch?.url} alt="" />
+            <h2 use:transition={data.title}>{data.title}</h2>
+            <img use:transition={data.title + "i"} src={data.eyecatch?.url} alt="" />
         </div>
 
         <br>
         <br>
 
-        <div class="content">{@html data.content}</div>
+        <div class="cnt">
+            <div class="content">{@html data.content}</div>
+        </div>
 
         <br>
         <br>
@@ -43,5 +45,8 @@
         url: $page.url.href,
         title: 'BLOG',
         description: 'chainsのサイト - BLOG',
+        images: [{
+            url: data.eyecatch?.url
+        }]
     }}
 />
