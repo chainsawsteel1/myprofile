@@ -150,7 +150,7 @@
     }
 
     .bg {
-        background: linear-gradient(rgba(0, 0, 0, 0), var(--bg-color));
+        background: radial-gradient(ellipse at bottom right, rgba(100, 71, 173, 0.683), transparent), radial-gradient(ellipse at top left, rgba(41, 28, 124, 0.409), transparent);
         position: fixed;
         top: 0;
         height: 0;

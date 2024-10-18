@@ -2,6 +2,7 @@
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
     import { movepg } from "$lib/utils";
+    import tippy from "tippy.js";
 
     import Swal from "sweetalert2";
 
@@ -33,10 +34,12 @@
             <h2>相互</h2>
 
             <div class="chains">
-                <img src="/link/chains.webp" alt="バナー画像 - chains" width="300px">
+                <img src="/link/chains.webp" alt="バナー画像 - chains" width="300px" use:tippy={{content: '新バージョン', placement: 'right'}}>
+                <br>
+                <img class="blur" src="/link/chains.old.webp" alt="バナー画像 - chains" width="300px" use:tippy={{content: '旧バージョン', placement: 'right'}}>
                 <br>
                 <a href="/">chainsのサイト(このサイト)</a>
-                <p>chainsawsteel1が管理しているリンク集兼ブログサイト<br>上の画像はサンプルです。相互リンクの時に貼り付けて下さい。</p>
+                <p>chainsawsteel1が管理しているリンク集兼ブログサイト<br>バナー画像は上の新バージョンを利用してください。<br>リンクは https://chainsawsteel1.vercel.app でお願いします。</p>
             </div>
 
             <br>
