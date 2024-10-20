@@ -25,6 +25,10 @@
             <br>
 
             <button on:click="{discordName}">Discord</button>
+
+            <br>
+
+            <a href="https://www.yukkukomei.com/@chainsawsteel1" target="_blank">MMMC</a>
         </div>
 
 
@@ -39,7 +43,7 @@
                 <img class="blur" src="/link/chains.old.webp" alt="バナー画像 - chains" width="300px" use:tippy={{content: '旧バージョン', placement: 'right'}}>
                 <br>
                 <a href="/">chainsのサイト(このサイト)</a>
-                <p>chainsawsteel1が管理しているリンク集兼ブログサイト<br>バナー画像は上の新バージョンを利用してください。<br>リンクは https://chainsawsteel1.vercel.app でお願いします。</p>
+                <p>chainsawsteel1が管理しているリンク集兼ブログサイト<br>バナー画像は上の新バージョンを利用してください。<br>リンクは https://chainsawsteel1.vercel.app でお願いします。<br>連絡はSNS欄の下2つのどれかへお願いします。</p>
             </div>
 
             <br>
