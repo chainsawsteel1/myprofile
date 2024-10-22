@@ -1,16 +1,19 @@
 <script>
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
+    import { onMount } from "svelte";
 
     import { loadmd } from "$lib/mdperse";
 
-    // /**
-    //  * @type {string}
-    //  */
-    // let md
-    // loadmd("https://raw.githubusercontent.com/chainsawsteel1/myprofile/refs/heads/main/README.md").then(html => {
-    //     md = html
-    // })
+    /**
+     * @type {string}
+     */
+    let md
+    onMount(()=> {
+        loadmd("https://raw.githubusercontent.com/chainsawsteel1/myprofile/refs/heads/main/README.md").then(html => {
+            md = html
+        })
+    })
 </script>
 
 <main>
@@ -20,7 +23,7 @@
         <br>
         <p>以下README.md</p>
         <hr>
-        <!-- {@html md} -->
+        {@html md}
         <hr>
     </article>
 </main>
