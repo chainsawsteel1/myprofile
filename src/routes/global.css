@@ -113,6 +113,7 @@ article {
     opacity: 10%;
     bottom: 12em;
     right: 0;
+    display: none;
 }
 
 @container (min-width: 820px) {
