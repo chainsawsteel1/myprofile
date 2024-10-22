@@ -18,6 +18,8 @@
 
     import { fade } from "svelte/transition";
 
+    import Swal from "sweetalert2";
+
     import NProgress from "nprogress";
 
     import MENU from "../components/MENU.svelte";
@@ -56,6 +58,7 @@
 
     afterNavigate(() => {
         menustatus = false
+        Swal.close()
         gettitle(); // 移動先のページのタイトルを取得
     });
 
