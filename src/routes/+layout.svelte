@@ -16,6 +16,8 @@
     import { setupViewTransition } from 'sveltekit-view-transition';
     import { List, Border } from "svelte-bootstrap-icons";
 
+    import { fade } from "svelte/transition";
+
     import NProgress from "nprogress";
 
     import MENU from "../components/MENU.svelte";
@@ -68,6 +70,9 @@
             menustatus = false
         }
     }
+    export const toggleoff = () => {
+        menustatus = false
+    }
 </script>
 
 {#if $navigating}
@@ -78,7 +83,8 @@
 
 <h1 class="toph1">{title}</h1>
 
-<div class="navbg" class:navactive={menustatus == true}></div>
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div class="navbg" on:click="{() => toggleoff()}" class:navactive={menustatus == true}></div>
 
 <nav>
     <div class="logo">
@@ -103,15 +109,20 @@
     </div>
 </nav>
 
+{#if menustatus}
+    <div
+        transition:fade={{ duration: 300 }}
+        style="position: absolute; z-index: 1;"
+    >
+        <MENU></MENU>
+    </div>
+{/if}
+
 <div class="box">
     <slot />
 </div>
 
 <div><Toaster/></div>
-
-{#if menustatus}
-    <MENU></MENU>
-{/if}
 
 <style>
     button {
@@ -150,7 +161,7 @@
     }
 
     .navbg {
-        /* transition: .3s; */
+        transition: .3s;
         background-color: var(--bg-color5);
         backdrop-filter: blur(1.5em);
         position: fixed;

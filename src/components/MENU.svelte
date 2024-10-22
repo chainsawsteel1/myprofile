@@ -19,11 +19,9 @@
     menu {
         position: fixed;
         z-index: 1;
-        width: 100%;
-        height: 100%;
-        top: 4em;
-        left: 0;
-        padding-top: 10em;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
         margin: auto;
         text-align: center;
     }

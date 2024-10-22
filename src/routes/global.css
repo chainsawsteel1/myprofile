@@ -10,11 +10,12 @@
     --btn-color: var(--navtxt-color);
     --popup-color: rgb(247, 245, 255);
     --hov-color: rgb(87, 79, 136);
-    --load-color: rgb(221, 216, 255);
+    --load-color: var(--text-color);
     --shadow-color: rgb(99, 93, 132);
 }
 
 body {
+    transition: .3s;
     background: var(--bg-color);
     color: var(--text-color);
     font-family: "IBM Plex Sans JP", sans-serif;
@@ -32,7 +33,7 @@ body {
         --btn-color: var(--navtxt-color);
         --popup-color: rgb(55, 48, 100);
         --hov-color: rgb(180, 169, 255);
-        --load-color: rgb(221, 216, 255);
+        --load-color: var(--text-color);
         --shadow-color: rgb(99, 93, 132);
     }
 
