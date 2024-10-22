@@ -130,7 +130,7 @@ img {
 }
 
 .blur {
-    filter: blur(1em);
+    filter: blur(.5em);
     transition: .3s;
 }
 
@@ -140,4 +140,10 @@ img {
 
 ul li {
     margin-left: 2.5em;
+}
+
+.swal2-backdrop-show {
+    background: var(--bg-color5);
+    backdrop-filter: blur(1.5em);
+    z-index: 0;
 }

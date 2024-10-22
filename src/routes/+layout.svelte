@@ -150,7 +150,7 @@
     }
 
     .navbg {
-        transition: .3s;
+        /* transition: .3s; */
         background-color: var(--bg-color5);
         backdrop-filter: blur(1.5em);
         position: fixed;

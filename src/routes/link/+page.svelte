@@ -10,7 +10,7 @@
         Swal.fire({
             text: "Discord: chainsawsteel1",
             color: "var(--text-color)",
-            background: "var(--popup-color)",
+            background: "rgba(255, 255, 255, 0)",
         });
     }
 </script>
