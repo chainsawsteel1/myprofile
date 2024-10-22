@@ -9,8 +9,8 @@
     function discordName() {
         Swal.fire({
             text: "Discord: chainsawsteel1",
-            color: "var(--dtext-color)",
-            background: "var(--btn-color)",
+            color: "var(--text-color)",
+            background: "var(--popup-color)",
         });
     }
 </script>

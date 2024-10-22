@@ -14,11 +14,11 @@
     import { onMount } from "svelte";
     import { afterNavigate } from "$app/navigation";
     import { setupViewTransition } from 'sveltekit-view-transition';
-    import Swal from "sweetalert2";
     import { List, Border } from "svelte-bootstrap-icons";
 
-
     import NProgress from "nprogress";
+
+    import MENU from "../components/MENU.svelte";
 
     NProgress.configure({
     showSpinner: false // スピナーを表示しない
@@ -53,22 +53,20 @@
     })
 
     afterNavigate(() => {
+        menustatus = false
         gettitle(); // 移動先のページのタイトルを取得
     });
 
-    function menu() {
-        Swal.fire({
-            title: "MENU",
-            html: `
-                <a href="/">HOME</a>
-                <br>
-                <a href="/blog">BLOG</a>
-                <br>
-                <a href="/link">LINK</a>
-            `,
-            color: "var(--dtext-color)",
-            background: "var(--btn-color)",
-        });
+    /**
+	 * @type {boolean}
+	 */
+    let menustatus;
+    export const toggle = () => {
+        if (menustatus == false) {
+            menustatus = true
+        } else {
+            menustatus = false
+        }
     }
 </script>
 
@@ -79,6 +77,8 @@
 {/if}
 
 <h1 class="toph1">{title}</h1>
+
+<div class="navbg" class:navactive={menustatus == true}></div>
 
 <nav>
     <div class="logo">
@@ -99,7 +99,7 @@
     </div>
 
     <div class="menu sp">
-        <button class="side" on:click="{menu}"><List  width={45} height={45}/></button>
+        <button on:click="{() => toggle()}" class="side"><List  width={45} height={45}/></button>
     </div>
 </nav>
 
@@ -109,7 +109,9 @@
 
 <div><Toaster/></div>
 
-<div class="bg"></div>
+{#if menustatus}
+    <MENU></MENU>
+{/if}
 
 <style>
     button {
@@ -134,8 +136,6 @@
 
     nav {
         height: 4em;
-        background-color: var(--bg-color5);
-        backdrop-filter: blur(1.5em);
         margin: auto;
         position: fixed;
         z-index: 1;
@@ -149,19 +149,26 @@
         container-type: inline-size;
     }
 
-    .bg {
-        background: radial-gradient(ellipse at bottom right, rgba(100, 71, 173, 0.683), transparent), radial-gradient(ellipse at top left, rgba(41, 28, 124, 0.409), transparent);
+    .navbg {
+        transition: .3s;
+        background-color: var(--bg-color5);
+        backdrop-filter: blur(1.5em);
         position: fixed;
-        top: 0;
-        height: 0;
         width: 100%;
+        height: 4em;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+
+    .navactive {
         height: 100%;
-        z-index: -1;
     }
 
     .loading {
         position: fixed;
         bottom: 0%;
+        z-index: 10;
     }
 
     .sp {

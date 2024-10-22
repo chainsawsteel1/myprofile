@@ -1,24 +1,44 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap");
 
 :root {
-    --navbar-color: rgb(52, 48, 80);
-    --bg-color: rgb(38, 35, 63);
-    --bg-color5: rgba(38, 35, 63, 0.5);
-    --text-color: rgb(221, 216, 255);
-    --dtext-color: rgb(24, 19, 61);
-    --link-color: rgb(24, 19, 61);
-    --navtxt-color: rgb(201, 193, 255);
-    --btn-color: rgb(201, 193, 255);
-    --hov-color: rgb(180, 169, 255);
+    --bg-color: rgb(255, 255, 255);
+    --bg-color5: rgba(255, 255, 255, 0.5);
+    --text-color: rgb(24, 19, 61);
+    --dtext-color: rgb(221, 216, 255);
+    --link-color: var(--dtext-color);
+    --navtxt-color: rgb(64, 58, 104);
+    --btn-color: var(--navtxt-color);
+    --popup-color: rgb(247, 245, 255);
+    --hov-color: rgb(87, 79, 136);
     --load-color: rgb(221, 216, 255);
     --shadow-color: rgb(99, 93, 132);
 }
 
 body {
-    background: black;
+    background: var(--bg-color);
     color: var(--text-color);
     font-family: "IBM Plex Sans JP", sans-serif;
     overflow-x: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: rgb(38, 35, 63);
+        --bg-color5: rgba(38, 35, 63, 0.5);
+        --text-color: rgb(221, 216, 255);
+        --dtext-color: rgb(24, 19, 61);
+        --link-color: var(--dtext-color);
+        --navtxt-color: rgb(160, 153, 206);
+        --btn-color: var(--navtxt-color);
+        --popup-color: rgb(55, 48, 100);
+        --hov-color: rgb(180, 169, 255);
+        --load-color: rgb(221, 216, 255);
+        --shadow-color: rgb(99, 93, 132);
+    }
+
+    body {
+        background: var(--bg-color);
+    }
 }
 
 button{
@@ -29,6 +49,17 @@ button{
     transition: .3s;
     padding: .4em;
     min-width: 5em;
+}
+
+.swal2-confirm {
+    margin-top: .1em;
+    margin-bottom: .1em;
+    background-color: var(--btn-color);
+    color: var(--dtext-color);
+    transition: .3s;
+    padding: .4em;
+    min-width: 5em;
+    border-radius: 0px;
 }
 
 button:hover {
@@ -68,15 +99,18 @@ article {
 }
 
 .toph1 {
+    background:linear-gradient(90deg, var(--bg-color),var(--text-color));	
+	-webkit-background-clip:text;
+    background-clip: text;
+	-webkit-text-fill-color: transparent;
     width: 5em;
     height: 1.4em;
     position: fixed;
-    color: var(--text-color);
     text-align: right;
     transition: .3s;
     z-index: -2;
     transform: rotate(90deg) scale(5);
-    opacity: 30%;
+    opacity: 10%;
     bottom: 12em;
     right: 0;
 }
@@ -102,4 +136,8 @@ img {
 
 .blur:hover {
     filter: unset;
+}
+
+ul li {
+    margin-left: 2.5em;
 }
