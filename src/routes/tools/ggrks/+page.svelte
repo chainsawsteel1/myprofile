@@ -1,8 +1,6 @@
 <script>
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
-    import { movepg } from "$lib/utils";
-    import tippy from "tippy.js";
 
     import Swal from "sweetalert2";
 
@@ -21,16 +19,16 @@
         });
     }
 
-    let sharp = $page.url.hash
-    let hash = sharp.substr(sharp.indexOf('#') + 1);
+    let sharp = $page.url.search
+    let search = sharp.substr(sharp.indexOf('?') + 1);
 
     let data
 
     export const genogp = () => {
-        if (hash == '') {
+        if (search == '') {
             data = "自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。"
         } else {
-            data = hash
+            data = search
         }
         return data
     }
@@ -41,21 +39,21 @@
         <div class="ggrks">
             <h2 class="ggj">GooglingGo! Japan</h2>
 
-            {#if hash}
-                    <h2>🔍 {hash}</h2>
+            {#if search}
+                    <h2>🔍 {search}</h2>
             {/if}
 
             <p>お好みの検索エンジンを選んでください</p>
 
             <br>
 
-            <a href="https://www.google.com/search?q={hash}" target="_blank">Google</a>
+            <a href="https://www.google.com/search?q={search}" target="_blank">Google</a>
             <br>
-            <a href="https://www.bing.com/search?q={hash}" target="_blank">Bing</a>
+            <a href="https://www.bing.com/search?q={search}" target="_blank">Bing</a>
             <br>
-            <a href="https://duckduckgo.com/?q={hash}" target="_blank">DuckDuckGo</a>
+            <a href="https://duckduckgo.com/?q={search}" target="_blank">DuckDuckGo</a>
             <br>
-            <a href="https://search.yahoo.com/search?q={hash}" target="_blank">Yahoo</a>
+            <a href="https://search.yahoo.com/search?q={search}" target="_blank">Yahoo</a>
 
             <br>
             <br>
@@ -67,7 +65,7 @@
             <br>
             <br>
 
-            <p>Tips: #以降にワードを指定することで、各検索エンジンへのリンクから直接検索できるようになります。<a href="/tools/ggrks/#GGRKS" target="_blank">例</a></p>
+            <p>Tips: ?以降にワードを指定することで、各検索エンジンへのリンクから直接検索できるようになります。<a href="/tools/ggrks/?GGRKS" target="_blank">例</a></p>
             <a href="https://github.com/ggrbk/ggrbk.github.io" target="_blank">元ネタ</a>
         </div>
     </article>
