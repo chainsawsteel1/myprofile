@@ -24,12 +24,15 @@
     let sharp = $page.url.hash
     let hash = sharp.substr(sharp.indexOf('#') + 1);
 
+    let data
+
     export const genogp = () => {
-        if (hash == undefined) {
-            return "自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。"
+        if (hash == '') {
+            data = "自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。"
         } else {
-            return hash
+            data = hash
         }
+        return data
     }
 </script>
 
