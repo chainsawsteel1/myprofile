@@ -86,6 +86,6 @@
         type: 'website',
         url: $page.url.href,
         title: 'GGRKS',
-        description: genogp(),
+        description: '🔍 ' + genogp(),
     }}
 />
