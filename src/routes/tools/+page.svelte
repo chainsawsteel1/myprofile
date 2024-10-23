@@ -10,6 +10,8 @@
             <h2>TOOLS</h2>
 
             <button on:click="{() => movepg("/tools/ggrks")}">GGRKS</button>
+            <br>
+            <button on:click="{() => movepg("/test")}">テストページ</button>
         </div>
     </article>
 </main>

@@ -20,7 +20,8 @@
     }
 
     let sharp = $page.url.search
-    let search = sharp.substr(sharp.indexOf('?') + 1);
+    let search1 = sharp.substr(sharp.indexOf('?') + 1);
+    let search = search1.substr(0, search1.indexOf('='));
 
     let data
 
@@ -65,7 +66,9 @@
             <br>
             <br>
 
-            <p>Tips: ?以降にワードを指定することで、各検索エンジンへのリンクから直接検索できるようになります。<a href="/tools/ggrks/?GGRKS" target="_blank">例</a></p>
+            {#if !search}
+                <p>Tips: ?以降にワードを指定することで、各検索エンジンへのリンクから直接検索できるようになります。<a href="/tools/ggrks/?GGRKS" target="_blank">例</a></p>
+            {/if}
             <a href="https://github.com/ggrbk/ggrbk.github.io" target="_blank">元ネタ</a>
         </div>
     </article>
