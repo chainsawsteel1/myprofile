@@ -20,8 +20,7 @@
     }
 
     let sharp = $page.url.search
-    let search1 = sharp.substr(sharp.indexOf('?') + 1);
-    let search = search1.substr(0, search1.indexOf('='));
+    let search = sharp.substr(sharp.indexOf('?') + 1);
 
     let data
 
