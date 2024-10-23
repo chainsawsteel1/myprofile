@@ -13,6 +13,9 @@
     <br>
     <br>
     <button on:click={() => movepg("/link")}>LINK</button>
+    <br>
+    <br>
+    <button on:click="{() => movepg("/tools")}">TOOLS</button>
 </menu>
 
 <style>

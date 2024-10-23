@@ -98,6 +98,7 @@
         <button on:click="{() => movepg("/")}">HOME</button>
         <button on:click="{() => movepg("/blog")}">BLOG</button>
         <button on:click="{() => movepg("/link")}">LINK</button>
+        <button on:click="{() => movepg("/tools")}">TOOLS</button>
     </div>
 
     <div class="link sp">
