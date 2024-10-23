@@ -4,11 +4,13 @@
 </script>
 
 <main>
-    {#if $page.status == 404}
-        <h1 class="toph1">404</h1>
-    {:else}
-        <h1 class="toph1">ERROR</h1>
-    {/if}
+    <article>
+        {#if $page.status == 404}
+            <h2>404</h2>
+        {:else}
+            <h2>ERROR</h2>
+        {/if}
+    </article>
 </main>
 
 <MetaTags

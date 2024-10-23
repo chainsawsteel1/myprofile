@@ -66,7 +66,7 @@
             <br>
 
             {#if !search}
-                <p>Tips: ?以降にワードを指定することで、各検索エンジンへのリンクから直接検索できるようになります。<a href="/tools/ggr?GGRKS" target="_blank">例</a></p>
+                <p>Tips: ?以降にワードを指定することで、各検索エンジンへのリンクから直接検索できるようになります。<a href="/tools/ggrks?GGRKS" target="_blank">例</a></p>
             {/if}
             <a href="https://github.com/ggrbk/ggrbk.github.io" target="_blank">元ネタ</a>
         </div>
