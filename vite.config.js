@@ -1,11 +1,11 @@
 import { sveltekit } from '@sveltejs/kit/vite';
-import { SvelteKitPWA } from '@vite-pwa/sveltekit'
+import { VitePWA } from 'vite-plugin-pwa';
 import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [
 		sveltekit(),
-		SvelteKitPWA({
+		VitePWA({
 			registerType: 'autoUpdate',
 			manifest: {
 				name: 'chiansのサイト',

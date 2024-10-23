@@ -51,9 +51,9 @@
             <br>
             <a href="https://www.bing.com/search?q={search}" target="_blank">Bing</a>
             <br>
-            <a href="https://duckduckgo.com/?q={search}" target="_blank">DuckDuckGo</a>
+            <a href="https://duckduckgo.com/?q={search}" target="_blank">DDG</a>
             <br>
-            <a href="https://search.yahoo.com/search?q={search}" target="_blank">Yahoo</a>
+            <a href="https://search.yahoo.com/search?q={search}" target="_blank">Yahoo!</a>
 
             <br>
             <br>
