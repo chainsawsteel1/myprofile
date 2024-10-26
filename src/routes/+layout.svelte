@@ -14,7 +14,7 @@
     import { onMount } from "svelte";
     import { afterNavigate } from "$app/navigation";
     import { setupViewTransition } from 'sveltekit-view-transition';
-    import { List, Border } from "svelte-bootstrap-icons";
+    import { List, Github } from "svelte-bootstrap-icons";
 
     import { fade } from "svelte/transition";
 
@@ -87,7 +87,8 @@
 <h1 class="toph1">{title}</h1>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="navbg" on:click="{() => toggleoff()}" class:navactive={menustatus == true}></div>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true}></div>
 
 <nav>
     <div class="logo">
@@ -105,7 +106,7 @@
     </div>
 
     <div class="menu pc">
-        <button class="side"><Border  width={35} height={35}/></button>
+        <a href="https://github.com/chainsawsteel1/myprofile" target="_blank" class="side"><Github  width={40} height={40}/></a>
     </div>
 
     <div class="menu sp">
@@ -200,13 +201,15 @@
         align-items: center;
         text-align: center;
         justify-content: center;
+        background-color: unset;
+        color: var(--txt-color);
     }
 
     .side:hover {
         box-shadow: unset;
     }
 
-    @container (max-width: 600px) {
+    @container (max-width: 820px) {
         .pc {
             display: none;
         }

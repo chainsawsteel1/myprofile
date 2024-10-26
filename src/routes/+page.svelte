@@ -18,8 +18,14 @@
 
 <main>
     <article>
-        <h2>chainsの自己満ウェブサイト</h2>
-        <p>工事中</p>
+        <div class="center">
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+            <img class="icon pc" src="/favicon.png" alt="chains" style="width: 300px;">
+            <img class="sp" src="/favicon.png" alt="chains" style="width: 150px;">
+            <h2>chainsの自己満ウェブサイト</h2>
+            <p>工事中</p>
+        </div>
         <br>
         <p>以下README.md</p>
         <hr>
@@ -29,7 +35,42 @@
 </main>
 
 <style>
+    .center {
+        text-align: center;
+    }
 
+    .icon {
+        transition: .3s;
+        background-color: var(--shadow-color);
+        border-radius: 250px;
+        padding: 10px;
+        position: relative;
+        transform: scale(.9);
+    }
+
+    .icon:hover {
+        transform: scale(1.1);
+    }
+
+    .icon:active {
+        transform: scale(.8);
+    }
+
+    .sp {
+        display: none;
+    }
+
+    @container (max-width: 820px) {
+        .icon {
+            width: 200px;
+        }
+        .pc {
+            display: none;
+        }
+        .sp {
+            display: inline;
+        }
+    }
 </style>
 
 <MetaTags
