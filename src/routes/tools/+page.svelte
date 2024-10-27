@@ -11,6 +11,8 @@
 
             <button on:click="{() => movepg("/tools/ggrks")}">GGRKS</button>
             <br>
+            <button on:click="{() => movepg("/tools/mfm")}">MDtoMFM</button>
+            <br>
             <button on:click="{() => movepg("/test")}">テストページ</button>
         </div>
     </article>
