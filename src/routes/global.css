@@ -1,17 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap");
 
 :root {
-    --bg-color: rgb(255, 255, 255);
+    --bg-color: white;
     --bg-color5: rgba(255, 255, 255, 0.5);
-    --text-color: rgb(24, 19, 61);
-    --dtext-color: rgb(221, 216, 255);
+    --text-color: rgb(61, 61, 61);
+    --dtext-color: white;
     --link-color: var(--dtext-color);
-    --navtxt-color: rgb(64, 58, 104);
+    --navtxt-color: rgb(104, 104, 104);
     --btn-color: var(--navtxt-color);
-    --popup-color: rgb(247, 245, 255);
-    --hov-color: rgb(87, 79, 136);
+    --popup-color: white;
+    --hov-color: rgb(136, 136, 136);
     --load-color: var(--text-color);
-    --shadow-color: rgb(99, 93, 132);
+    --shadow-color: rgb(132, 132, 132);
 }
 
 body {
@@ -24,17 +24,17 @@ body {
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: rgb(38, 35, 63);
-        --bg-color5: rgba(38, 35, 63, 0.5);
-        --text-color: rgb(221, 216, 255);
-        --dtext-color: rgb(24, 19, 61);
+        --bg-color: black;
+        --bg-color5: rgba(0, 0, 0, 0.5);
+        --text-color: white;
+        --dtext-color: rgb(61, 61, 61);
         --link-color: var(--dtext-color);
-        --navtxt-color: rgb(160, 153, 206);
+        --navtxt-color: rgb(206, 206, 206);
         --btn-color: var(--navtxt-color);
-        --popup-color: rgb(55, 48, 100);
-        --hov-color: rgb(180, 169, 255);
+        --popup-color: rgb(100, 100, 100);
+        --hov-color: white;
         --load-color: var(--text-color);
-        --shadow-color: rgb(99, 93, 132);
+        --shadow-color: rgb(132, 132, 132);
     }
 
     body {
