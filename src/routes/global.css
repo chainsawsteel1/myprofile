@@ -3,15 +3,15 @@
 :root {
     --bg-color: white;
     --bg-color5: rgba(255, 255, 255, 0.5);
-    --text-color: rgb(61, 61, 61);
+    --text-color: black;
     --dtext-color: white;
-    --link-color: var(--dtext-color);
+    --link-color: white;
     --navtxt-color: rgb(104, 104, 104);
-    --btn-color: var(--navtxt-color);
+    --btn-color: black;
     --popup-color: white;
-    --hov-color: rgb(136, 136, 136);
-    --load-color: var(--text-color);
-    --shadow-color: rgb(132, 132, 132);
+    --hov-color: rgb(59, 59, 59);
+    --load-color: black;
+    --shadow-color: black;
 }
 
 body {
@@ -27,14 +27,14 @@ body {
         --bg-color: black;
         --bg-color5: rgba(0, 0, 0, 0.5);
         --text-color: white;
-        --dtext-color: rgb(61, 61, 61);
-        --link-color: var(--dtext-color);
+        --dtext-color: black;
+        --link-color: black;
         --navtxt-color: rgb(206, 206, 206);
-        --btn-color: var(--navtxt-color);
+        --btn-color: white;
         --popup-color: rgb(100, 100, 100);
-        --hov-color: white;
-        --load-color: var(--text-color);
-        --shadow-color: rgb(132, 132, 132);
+        --hov-color: rgb(202, 202, 202);
+        --load-color: white;
+        --shadow-color: white;
     }
 
     body {

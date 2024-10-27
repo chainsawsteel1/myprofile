@@ -92,7 +92,7 @@
 
 <nav>
     <div class="logo">
-        <button class="side" on:click="{() => movepg("/")}"><img src="/favicon.png" alt="chains"></button>
+        <button class="side" on:click="{() => movepg("/")}"><img class="icon" src="/favicon.png" alt="chains"></button>
     </div>
 
     <div class="link pc">
@@ -216,5 +216,13 @@
         .sp {
             display: inline;
         }
+    }
+
+    .icon {
+        background-color: var(--text-color);
+        width: 40px;
+        height: 40px;
+        border-radius: 250px;
+        padding: 1px;
     }
 </style>
