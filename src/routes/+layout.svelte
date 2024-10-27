@@ -1,10 +1,8 @@
 <script>
     import "ress"
     import "./global.css";
-    import "./alert.css";
-    import "./toast.css";
     import "./nprogress.css";
-    import "./loadanim.css"
+    import "./color/monotone.css"
     
     import { onNavigate } from "$app/navigation";
     import { navigating } from "$app/stores";

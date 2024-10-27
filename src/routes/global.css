@@ -1,45 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap");
 
-:root {
-    --bg-color: white;
-    --bg-color5: rgba(255, 255, 255, 0.5);
-    --text-color: black;
-    --dtext-color: white;
-    --link-color: white;
-    --navtxt-color: rgb(104, 104, 104);
-    --btn-color: black;
-    --popup-color: white;
-    --hov-color: rgb(59, 59, 59);
-    --load-color: black;
-    --shadow-color: black;
-}
-
 body {
     transition: .3s;
-    background: var(--bg-color);
-    color: var(--text-color);
     font-family: "IBM Plex Sans JP", sans-serif;
     overflow-x: hidden;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --bg-color: black;
-        --bg-color5: rgba(0, 0, 0, 0.5);
-        --text-color: white;
-        --dtext-color: black;
-        --link-color: black;
-        --navtxt-color: rgb(206, 206, 206);
-        --btn-color: white;
-        --popup-color: rgb(100, 100, 100);
-        --hov-color: rgb(202, 202, 202);
-        --load-color: white;
-        --shadow-color: white;
-    }
-
-    body {
-        background: var(--bg-color);
-    }
 }
 
 button{

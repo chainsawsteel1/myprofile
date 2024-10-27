@@ -120,7 +120,7 @@ export const heading = (input) => {
     } else {
         level = (4 - level) + 1;
     }
-    last = "]\n";
+    last = "]";
     return "$[x" + level + " ";
 };
 

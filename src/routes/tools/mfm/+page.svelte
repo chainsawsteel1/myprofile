@@ -10,7 +10,6 @@
     import mtp from "markdown-tree-parser";
 
     let value = `# タイトル\n[リンク](https://example.com)`
-    let txt = ``
     let out = mfm(value)
 
     /**
