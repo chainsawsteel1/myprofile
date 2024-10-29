@@ -31,7 +31,15 @@
             <a href="https://www.yukkukomei.com/@chainsawsteel1" target="_blank">MMMC</a>
         </div>
 
+        <br>
 
+        <div class="sns">
+            <h2>メインアカウントの動き</h2>
+            <!-- svelte-ignore a11y-missing-attribute -->
+            <iframe src="https://www.yukkukomei.com/embed/user-timeline/9zdlezwqll?maxHeight=500" data-misskey-embed-id="v1_56e745a8-7999-435e-8c8d-6e0528e3a50c" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" style="border: none; width: 100%; max-width: 500px; height: 300px; color-scheme: light dark;"></iframe>
+            <script defer src="https://www.yukkukomei.com/embed.js"></script>
+        </div>
+        
         <br>
 
         <div class="sougo">
