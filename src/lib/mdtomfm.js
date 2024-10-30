@@ -8,7 +8,6 @@ let last = "";
 export const mfm = (input) => {
     let tree = mtp(input);
     let dump = tree.dump();
-    console.log(convert(dump));
     return convert(dump);
 };
 
@@ -60,6 +59,8 @@ export const type = (input) => {
     return data;
 };
 
+// block
+
 /**
  * @param {*} input
  */
@@ -71,6 +72,7 @@ export const block = (input) => {
             data = paragraph(input);
             break;
         case "horizontal":
+            data = horizontal(input);
             break;
         case "code":
             break;
@@ -81,10 +83,13 @@ export const block = (input) => {
             data = heading(input);
             break;
         case "list":
+            data = list(input);
             break;
         case "orderedlist":
+            data = orderedlist(input);
             break;
         case "checklist":
+            data = checklist(input);
             break;
         case "table":
             break;
@@ -105,6 +110,14 @@ export const paragraph = (input) => {
 /**
  * @param {*} input
  */
+export const horizontal = (input) => {
+    input = "\n--------------------------------------";
+    return input;
+};
+
+/**
+ * @param {*} input
+ */
 export const blockquote = (input) => {
     input = "\n> ";
     return input;
@@ -115,14 +128,55 @@ export const blockquote = (input) => {
  */
 export const heading = (input) => {
     let level = input.level;
-    if (level > 4) {
-        level = 4;
-    } else {
-        level = (4 - level) + 1;
+    let first;
+    switch(level) {
+        case 1:
+            first = "$[scale.x=2,y=2 $[position.x=1";
+            break;
+        case 2:
+            first = "$[scale.x=1.5,y=1.5 $[position.x=.8";
+            break;
+        default:
+            first = "$[scale.x=1.2,y=1.2 $[position.x=.5 ";
+            break;
     }
-    last = "]";
-    return "$[x" + level + " ";
+    last = "]]";
+    return first + " ";
 };
+
+/**
+ * @param {*} input
+ */
+export const list = (input) => {
+    input = "\n    ･";
+    return input;
+};
+
+/**
+ * @param {*} input
+ */
+export const orderedlist = (input) => {
+    let ord = input.order;
+    input = "\n    " + ord + ". ";
+    return input;
+};
+
+/**
+ * @param {*} input
+ */
+export const checklist = (input) => {
+    let chk = input.checked;
+    let ord;
+    if (chk == true) {
+        ord = "✅";
+    } else {
+        ord = "🔳";
+    }
+    input = "\n    " + ord + " ";
+    return input;
+};
+
+// inline
 
 /**
  * @param {*} input

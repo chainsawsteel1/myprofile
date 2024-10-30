@@ -65,6 +65,9 @@
             <div class="textarea">{mtp(value).dump()}</div>
             <br>
             {@html md}
+            <br>
+            <p>こんな感じ</p>
+            <img src="mfm/image.png" alt="こんな感じに">
         </div>
     </article>
 </main>
