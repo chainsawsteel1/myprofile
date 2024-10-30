@@ -41,7 +41,8 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'chainsのサイト - TEST',
+        title: 'TEST',
         description: 'テストページです。ライブラリのテストに利用しています。',
+        siteName: 'chainsのサイト'
     }}
 />

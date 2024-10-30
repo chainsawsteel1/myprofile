@@ -27,7 +27,8 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'chainsのサイト - TOOLS',
+        title: 'TOOLS',
         description: 'chainsの作った役に立つか分からない謎ツール一覧です。',
+        siteName: 'chainsのサイト'
     }}
 />

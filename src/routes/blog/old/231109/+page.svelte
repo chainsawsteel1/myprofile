@@ -31,7 +31,8 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'chainsのサイト - 新技術入手',
-        description: '新技術入手',
+        title: '新技術入手',
+        description: '新技術入手(アーカイブ)',
+        siteName: 'chainsのサイト'
     }}
 />

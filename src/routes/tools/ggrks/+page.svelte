@@ -83,11 +83,12 @@
 </style>
 
 <MetaTags
-    title="GGRKS"
+    title="GooglingGo! Japan"
     openGraph={{
         type: 'website',
         url: $page.url.href,
         title: 'GGRKS',
         description: '🔍 ' + genogp(),
+        siteName: 'GooglingGo! Japan'
     }}
 />

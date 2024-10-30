@@ -95,7 +95,8 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'chainsのサイト - BLOG',
+        title: 'BLOG',
         description: 'chainsのブログです。更新するかは分かりません。',
+        siteName: 'chainsのサイト'
     }}
 />
