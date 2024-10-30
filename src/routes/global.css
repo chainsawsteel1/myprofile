@@ -83,7 +83,6 @@ article {
 
 @container (min-width: 820px) {
     article {
-        padding-top: 10em;
         margin: auto;
         width: 800px;
     }

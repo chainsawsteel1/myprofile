@@ -94,7 +94,7 @@ export const block = (input) => {
         case "table":
             break;
         default:
-            data = "block";
+            data = "block(未実装)";
     }
     return data;
 };
@@ -212,7 +212,7 @@ export const inline = (input) => {
             data = link(input);
             break;
         default:
-            data = "inline";
+            data = "inline(未実装)";
     }
     return data;
 };
