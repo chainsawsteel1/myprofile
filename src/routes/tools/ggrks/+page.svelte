@@ -26,7 +26,7 @@
 
     export const genogp = () => {
         if (search == '') {
-            data = "自分で調べることはとても重要です。人に聞く前に一度検索してみやがれください。"
+            data = "人に聞くのは最終手段です。一通り調べてから聞くようにしましょう。"
         } else {
             data = search
         }
@@ -89,6 +89,12 @@
         url: $page.url.href,
         title: 'GGRKS',
         description: '🔍 ' + genogp(),
+        images: [
+            {
+                url: "/ggr.png",
+                alt: "ファビコン",
+            }
+        ],
         siteName: 'GooglingGo! Japan'
     }}
 />
