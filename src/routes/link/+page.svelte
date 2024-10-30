@@ -77,7 +77,7 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'LINK',
-        description: 'chainsのサイト - LINK',
+        title: 'chainsのサイト - LINK',
+        description: 'chainsのSNSのリンクや相互リンクがあります。',
     }}
 />

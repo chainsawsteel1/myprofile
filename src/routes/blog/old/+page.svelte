@@ -21,11 +21,11 @@
 </main>
 
 <MetaTags
-    title="BLOG"
+    title="BLOGold"
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'BLOG',
-        description: 'chainsのサイト - BLOG',
+        title: 'chainsのサイト - BLOGold',
+        description: 'chainsの過去のブログがあります。',
     }}
 />

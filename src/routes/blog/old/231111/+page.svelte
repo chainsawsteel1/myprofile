@@ -31,7 +31,7 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: '231111',
-        description: 'chainsのサイト - 人生たのベントカレンダー🎶 Advent Calendar 2023',
+        title: 'chainsのサイト - 人生たのベントカレンダー🎶 Advent Calendar 2023',
+        description: '人生たのベントカレンダー🎶 Advent Calendar 2023',
     }}
 />

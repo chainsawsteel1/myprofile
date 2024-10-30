@@ -31,7 +31,7 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: '231109',
-        description: 'chainsのサイト - 新技術入手',
+        title: 'chainsのサイト - 新技術入手',
+        description: '新技術入手',
     }}
 />

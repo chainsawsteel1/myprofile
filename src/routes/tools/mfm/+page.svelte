@@ -100,7 +100,7 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'MDtoMFM',
-        description: 'マークダウンをMFMに変換します',
+        title: 'chainsのサイト - MDtoMFM',
+        description: 'マークダウンをMFMに変換します。アルファ版',
     }}
 />

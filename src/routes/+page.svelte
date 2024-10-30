@@ -78,7 +78,13 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'HOME',
-        description: 'chainsのサイト - HOME',
+        title: 'chainsのサイト - HOME',
+        description: 'ようこそchiansのサイトへ。何度も作り変えましたが、ようやく完成が見えてきたかもしれません。',
+        images: [
+            {
+                url: "/favicon.png",
+                alt: "ファビコン",
+            }
+        ],
     }}
 />

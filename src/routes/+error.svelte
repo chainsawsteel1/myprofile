@@ -18,7 +18,7 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'ERROR',
-        description: 'chainsのサイト - ERROR',
+        title: 'chainsのサイト - ERROR',
+        description: '何かしらの問題が発生したようです。',
     }}
 />

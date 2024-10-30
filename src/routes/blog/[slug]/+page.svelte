@@ -43,10 +43,10 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'BLOG',
-        description: 'chainsのサイト - BLOG',
+        title: 'chainsのサイト - BLOG',
+        description: data.ogptxt?.url,
         images: [{
-            url: data.eyecatch?.url
+            url: data.ogpimg?.url
         }]
     }}
 />
