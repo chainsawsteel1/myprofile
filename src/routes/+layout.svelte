@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import "ress"
     import "./global.css";
     import "./nprogress.css";
@@ -43,10 +43,7 @@
 
     setupViewTransition();
 
-    /**
-	 * @type {string}
-	 */
-    let title
+    let title: string
     const gettitle = () => {
         title = document.title; // 現在のページのタイトルを取得
     };
@@ -61,10 +58,7 @@
         gettitle(); // 移動先のページのタイトルを取得
     });
 
-    /**
-	 * @type {boolean}
-	 */
-    let menustatus;
+    let menustatus: boolean;
     export const toggle = () => {
         if (menustatus == false) {
             menustatus = true

@@ -8,11 +8,7 @@ showdown.extension('targetBlank', function () {
     }];
 });
 
-/**
- * @param {string} path
- * @returns {Promise<string>}
- */
-export const loadmd = async (path) => {
+export const loadmd = async (path: string): Promise<string> => {
     let converter = new showdown.Converter({
         extensions: ['targetBlank']
     });

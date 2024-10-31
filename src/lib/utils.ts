@@ -3,10 +3,7 @@ import { page } from '$app/stores';
 import { get } from 'svelte/store';
 import toast from 'svelte-french-toast';
 
-/**
- * @param {string | URL} url
- */
-export const movepg = (url) => {
+export const movepg = (url: string) => {
     const $page = get(page);
     if ($page.url.origin + url == $page.url.href) {
         toast.error("既にそのページに居ます", {

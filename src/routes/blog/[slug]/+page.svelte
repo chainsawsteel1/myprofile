@@ -1,8 +1,8 @@
-<script>
+<script lang="ts">
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
 
-    import { movepg } from '$lib/utils';
+    import { movepg } from '$lib/utils.js';
 
     import { setupViewTransition } from 'sveltekit-view-transition';
     const { transition } = setupViewTransition();
@@ -46,7 +46,7 @@
         title: 'BLOG',
         description: data.ogptxt,
         images: [{
-            url: data.ogpimg?.url
+            url: data.ogpimg?.url ?? ""
         }],
         siteName: 'chainsのサイト',
     }}

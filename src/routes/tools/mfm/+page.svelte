@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
     import { onMount } from "svelte";
@@ -7,15 +7,13 @@
 
     import { mfm } from '$lib/mdtomfm';
     import { loadmd } from "$lib/mdperse";
+    // @ts-ignore
     import mtp from "markdown-tree-parser";
 
     let value = `# タイトル\n[リンク](https://example.com)`
     let out = mfm(value)
 
-    /**
-     * @type {string}
-     */
-    let md
+    let md: string
     onMount(()=> {
         loadmd("mfm/todo.md").then(html => {
             md = html

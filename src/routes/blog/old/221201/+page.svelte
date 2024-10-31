@@ -1,4 +1,4 @@
-<script>
+<script  lang="ts">
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
     import { movepg } from '$lib/utils';
@@ -6,10 +6,7 @@
 
     import { loadmd } from "$lib/mdperse";
 
-    /**
-	 * @type {string}
-	 */
-    let md
+    let md: string
     onMount(()=> {
         loadmd($page.url.href + "/main.md").then(html => {
         md = html

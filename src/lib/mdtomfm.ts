@@ -1,11 +1,21 @@
+// @ts-ignore
 import mtp from "markdown-tree-parser";
 
 let last = "";
 
-/**
- * @param {string} input
- */
-export const mfm = (input) => {
+export type MDtypes = {
+    value: string;
+    values: string;
+    name: string;
+    type: string;
+    title: string;
+    href: string;
+    level: number;
+    order: number;
+    checked: boolean;
+};
+
+export const mfm = (input: string) => {
     let tree = mtp(input);
     let dump = tree.dump();
     return convert(dump);
@@ -13,12 +23,9 @@ export const mfm = (input) => {
 
 // 配列を分割して渡す
 
-/**
- * @param {string} input
- */
-export const convert = (input) => {
+export const convert = (input: string) => {
     let output = "";
-    const obj = JSON.parse(input);
+    let obj = JSON.parse(input);
     for (var i = 0; i < obj.length; i++) {
         output = output + convertv(obj[i]);
     }
@@ -27,10 +34,7 @@ export const convert = (input) => {
 
 // 配列の中の配列を渡す
 
-/**
- * @param {*} input
- */
-export const convertv = (input) => {
+export const convertv = (input: MDtypes) => {
     let output = "";
     let data;
     const obj = input.values;
@@ -46,10 +50,7 @@ export const convertv = (input) => {
 
 // 中身を分析
 
-/**
- * @param {*} input
- */
-export const type = (input) => {
+export const type = (input: MDtypes) => {
     let data;
     if (input.type == "block") {
         data = block(input);
@@ -61,10 +62,7 @@ export const type = (input) => {
 
 // block
 
-/**
- * @param {*} input
- */
-export const block = (input) => {
+export const block = (input: MDtypes) => {
     let data;
     let type = input.name;
     switch(type) {
@@ -99,34 +97,19 @@ export const block = (input) => {
     return data;
 };
 
-/**
- * @param {*} input
- */
-export const paragraph = (input) => {
-    input = "\n";
-    return input;
+export const paragraph = (input: MDtypes) => {
+    return "\n";
 };
 
-/**
- * @param {*} input
- */
-export const horizontal = (input) => {
-    input = "\n--------------------------------------";
-    return input;
+export const horizontal = (input: MDtypes) => {
+    return "\n--------------------------------------";
 };
 
-/**
- * @param {*} input
- */
-export const blockquote = (input) => {
-    input = "\n> ";
-    return input;
+export const blockquote = (input: MDtypes) => {
+    return "\n> ";
 };
 
-/**
- * @param {*} input
- */
-export const heading = (input) => {
+export const heading = (input: MDtypes) => {
     let level = input.level;
     let first;
     switch(level) {
@@ -144,27 +127,16 @@ export const heading = (input) => {
     return first + " ";
 };
 
-/**
- * @param {*} input
- */
-export const list = (input) => {
-    input = "\n    ･";
-    return input;
+export const list = (input: MDtypes) => {
+    return "\n    ･";
 };
 
-/**
- * @param {*} input
- */
-export const orderedlist = (input) => {
+export const orderedlist = (input: MDtypes) => {
     let ord = input.order;
-    input = "\n    " + ord + ". ";
-    return input;
+    return "\n    " + ord + ". ";
 };
 
-/**
- * @param {*} input
- */
-export const checklist = (input) => {
+export const checklist = (input: MDtypes) => {
     let chk = input.checked;
     let ord;
     if (chk == true) {
@@ -172,16 +144,12 @@ export const checklist = (input) => {
     } else {
         ord = "🔳";
     }
-    input = "\n    " + ord + " ";
-    return input;
+    return "\n    " + ord + " ";
 };
 
 // inline
 
-/**
- * @param {*} input
- */
-export const inline = (input) => {
+export const inline = (input: MDtypes) => {
     let data;
     let type = input.name;
     switch(type) {
@@ -219,44 +187,26 @@ export const inline = (input) => {
 
 // 以下変換
 
-/**
- * @param {*} input
- */
-export const text = (input) => {
+export const text = (input: MDtypes) => {
     return input.value;
 };
 
-/**
- * @param {*} input
- */
-export const em = (input) => {
+export const em = (input: MDtypes) => {
     return "<i>" + input.value + "</i>";
 };
 
-/**
- * @param {*} input
- */
-export const italic = (input) => {
+export const italic = (input: MDtypes) => {
     return "<i>" + input.value + "</i>";
 };
 
-/**
- * @param {*} input
- */
-export const emitalic = (input) => {
+export const emitalic = (input: MDtypes) => {
     return "<i>" + input.value + "</i>";
 };
 
-/**
- * @param {*} input
- */
-export const strikethrough = (input) => {
+export const strikethrough = (input: MDtypes) => {
     return "~~" + input.value + "~~";
 };
 
-/**
- * @param {*} input
- */
-export const link = (input) => {
+export const link = (input: MDtypes) => {
     return "[ " + input.title + " ](" + input.href + ")";
 };
