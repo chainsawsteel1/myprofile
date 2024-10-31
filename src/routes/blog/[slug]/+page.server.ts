@@ -6,5 +6,3 @@ export const load: PageServerLoad = async ({ params }) => {
         params.slug
     );
 };
-
-export const prerender = true;
