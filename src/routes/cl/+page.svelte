@@ -222,14 +222,14 @@
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'chains オリジナル実装リンクまとめ推進',
-        description: 'SNS、GitHub等の今見て欲しいリンクをまとめてシェア',
+        title: 'chains',
+        description: 'SNS、GitHub等のリンク',
         images: [
             {
                 url: "/cl/ogp.png",
                 alt: "OGP画像",
             }
         ],
-        siteName: 'chains link(チェインスリンク)'
+        siteName: 'chains link'
     }}
 />
