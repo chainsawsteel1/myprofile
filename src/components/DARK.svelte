@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     const onClick = () => {
         if (document.documentElement.classList.contains("dark")) {
             document.documentElement.classList.remove("dark");

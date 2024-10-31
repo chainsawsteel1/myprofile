@@ -8,7 +8,7 @@ export const movepg = (url: string) => {
     if ($page.url.origin + url == $page.url.href) {
         toast.error("既にそのページに居ます", {
             position: "bottom-center",
-            style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color); box-shadow: unset;"
+            style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
         });
     } else {
         goto(url);

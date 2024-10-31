@@ -4,7 +4,6 @@
     import "./nprogress.css";
     import "./color/mono.css"
     
-    import { onNavigate } from "$app/navigation";
     import { navigating } from "$app/stores";
     import { page } from "$app/stores";
     import { Toaster } from "svelte-french-toast";
@@ -45,17 +44,23 @@
 
     let title: string
     const gettitle = () => {
-        title = document.title; // 現在のページのタイトルを取得
+        title = document.title;
+    };
+
+    let scroll: boolean;
+    const handleScroll = () => {
+        scroll = window.scrollY > 5;
     };
 
     onMount(() => {
         gettitle()
+        window.addEventListener('scroll', handleScroll);
     })
 
     afterNavigate(() => {
         menustatus = false
         Swal.close()
-        gettitle(); // 移動先のページのタイトルを取得
+        gettitle();
     });
 
     let menustatus: boolean;
@@ -72,7 +77,7 @@
 </script>
 
 {#if $navigating}
-	<div class="loading">
+	<div class="loading" transition:fade={{ duration: 100 }} style="position: absolute; z-index: 1;">
         <h1>Loading...</h1>
     </div>
 {/if}
@@ -81,7 +86,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true}></div>
+<div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true} class:shadow={scroll == true}></div>
 
 <nav>
     <div class="logo">
@@ -108,10 +113,7 @@
 </nav>
 
 {#if menustatus}
-    <div
-        transition:fade={{ duration: 300 }}
-        style="position: absolute; z-index: 1;"
-    >
+    <div transition:fade={{ duration: 300 }} style="position: absolute; z-index: 1;">
         <MENU/>
     </div>
 {/if}
@@ -243,5 +245,9 @@
         -webkit-background-clip:text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
+    }
+
+    .shadow {
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
     }
 </style>

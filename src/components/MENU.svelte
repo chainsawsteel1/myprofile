@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import { movepg } from "$lib/utils";
     import { Github } from "svelte-bootstrap-icons";
 </script>

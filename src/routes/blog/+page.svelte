@@ -63,6 +63,7 @@
         bottom: 1em;
         right: 1em;
         top: unset;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
     }
 
     @container (min-width: 820px) {
