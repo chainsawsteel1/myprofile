@@ -59,7 +59,7 @@
     }
 
     .old {
-        position: fixed;
+        position: absolute;
         bottom: 1em;
         right: 1em;
         top: unset;
