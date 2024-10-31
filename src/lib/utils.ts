@@ -14,3 +14,27 @@ export const movepg = (url: string) => {
         goto(url);
     } 
 };
+
+export const copy = (data: string) => {
+    if (!navigator.clipboard) {
+        toast.error("コピーできませんでした", {
+            position: "bottom-center",
+            style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
+        });
+        return;
+    }
+    navigator.clipboard.writeText(data).then(
+        () => {
+            toast.success("コピーしました", {
+                position: "bottom-center",
+                style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
+            });
+        },
+        () => {
+            toast.error("コピーできませんでした", {
+                position: "bottom-center",
+                style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
+            });
+        }
+    );
+}

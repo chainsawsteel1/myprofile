@@ -73,6 +73,7 @@ export const block = (input: MDtypes) => {
             data = horizontal(input);
             break;
         case "code":
+            data = codeblock(input)
             break;
         case "blockquote":
             data = blockquote(input);
@@ -105,8 +106,18 @@ export const horizontal = (input: MDtypes) => {
     return "\n--------------------------------------";
 };
 
+export const codeblock = (input: MDtypes) => {
+    last = "\n```";
+    return "\n```\n";
+}
+
 export const blockquote = (input: MDtypes) => {
-    return "\n> ";
+    let level = input.level
+    let than = "";
+    for (var i = 0; i < level; i++) {
+        than = than + ">"
+    }
+    return "\n" + than + " ";
 };
 
 export const heading = (input: MDtypes) => {
@@ -156,6 +167,9 @@ export const inline = (input: MDtypes) => {
         case "text":
             data = text(input);
             break;
+        case "code":
+            data = code(input);
+            break;
         case "html":
             break;
         case "htmlcontent":
@@ -189,6 +203,10 @@ export const inline = (input: MDtypes) => {
 
 export const text = (input: MDtypes) => {
     return input.value;
+};
+
+export const code = (input: MDtypes) => {
+    return "`" + input.value + "`";
 };
 
 export const em = (input: MDtypes) => {

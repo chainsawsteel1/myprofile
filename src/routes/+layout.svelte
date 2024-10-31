@@ -77,7 +77,7 @@
 </script>
 
 {#if $navigating}
-	<div class="loading" transition:fade={{ duration: 100 }} style="position: absolute; z-index: 1;">
+	<div class="loading" transition:fade={{ duration: 100 }}>
         <h1>Loading...</h1>
     </div>
 {/if}

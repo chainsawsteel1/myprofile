@@ -18,7 +18,7 @@ export default [
 		ignores: ['build/', '.svelte-kit/', 'dist/']
 	},
 	{
-		"rules": {
+		rules: {
 			"semi": ["error", "always"],
 			"semi-spacing": ["error", {"after": true, "before": false}],
 			"semi-style": ["error", "last"],
@@ -27,5 +27,4 @@ export default [
 			"no-unreachable": "error"
 		}
 	}
-	
 ];

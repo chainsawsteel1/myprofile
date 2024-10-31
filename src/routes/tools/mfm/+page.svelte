@@ -3,7 +3,7 @@
     import { page } from "$app/stores";
     import { onMount } from "svelte";
 
-    import toast from "svelte-french-toast";
+    import { copy } from "$lib/utils";
 
     import { mfm } from '$lib/mdtomfm';
     import { loadmd } from "$lib/mdperse";
@@ -19,30 +19,6 @@
             md = html
         })
     })
-
-    export const copy = () => {
-        if (!navigator.clipboard) {
-            toast.error("コピーできませんでした", {
-                position: "bottom-center",
-                style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
-            });
-            return;
-        }
-        navigator.clipboard.writeText(out).then(
-            () => {
-                toast.success("コピーしました", {
-                    position: "bottom-center",
-                    style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
-                });
-            },
-            () => {
-                toast.error("コピーできませんでした", {
-                    position: "bottom-center",
-                    style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
-                });
-            }
-        );
-    }
 </script>
 
 <main>
@@ -57,10 +33,10 @@
             <br>
             <p>アウトプット</p>
             <textarea readonly>{out}</textarea>
-            <button on:click={() => copy()}>コピー</button>
+            <button on:click={() => copy(out)}>コピー</button>
             <br>
             <p>デバッグ用</p>
-            <div class="textarea">{mtp(value).dump()}</div>
+            <textarea readonly>{mtp(value).dump()}</textarea>
             <br>
             {@html md}
             <br>
@@ -80,13 +56,6 @@
     }
 
     textarea {
-        background-color: var(--btn-color);
-        color: var(--dtext-color);
-        width: 100%;
-        padding: 10px;
-    }
-
-    .textarea {
         background-color: var(--btn-color);
         color: var(--dtext-color);
         width: 100%;
