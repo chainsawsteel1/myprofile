@@ -84,33 +84,35 @@
 
 <h1 class="toph1">{title}</h1>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true} class:shadow={scroll == true}></div>
+{#if $page.url.pathname != "/cl"}
+    <!-- svelte-ignore a11y-click-events-have-key-events -->
+    <!-- svelte-ignore a11y-no-static-element-interactions -->
+    <div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true} class:shadow={scroll == true}></div>
 
-<nav>
-    <div class="logo">
-        <button class="side" on:click="{() => movepg("/")}"><img class="icon" src="/favicon.png" alt="chains"></button>
-    </div>
+    <nav>
+        <div class="logo">
+            <button class="side" on:click="{() => movepg("/")}"><img class="icon" src="/favicon.png" alt="chains"></button>
+        </div>
 
-    <div class="link pc">
-        <button on:click="{() => movepg("/")}">HOME</button>
-        <button on:click="{() => movepg("/blog")}">BLOG</button>
-        <button on:click="{() => movepg("/link")}">LINK</button>
-        <button on:click="{() => movepg("/tools")}">TOOLS</button>
-    </div>
+        <div class="link pc">
+            <button on:click="{() => movepg("/")}">HOME</button>
+            <button on:click="{() => movepg("/blog")}">BLOG</button>
+            <button on:click="{() => movepg("/link")}">LINK</button>
+            <button on:click="{() => movepg("/tools")}">TOOLS</button>
+        </div>
 
-    <div class="link sp">
-    </div>
+        <div class="link sp">
+        </div>
 
-    <div class="menu pc">
-        <a href="https://github.com/chainsawsteel1/myprofile" target="_blank" class="side"><Github  width={40} height={40}/></a>
-    </div>
+        <div class="menu pc">
+            <a href="https://github.com/chainsawsteel1/myprofile" target="_blank" class="side"><Github width={40} height={40}/></a>
+        </div>
 
-    <div class="menu sp">
-        <button on:click="{() => toggle()}" class="side"><List  width={45} height={45}/></button>
-    </div>
-</nav>
+        <div class="menu sp">
+            <button on:click="{() => toggle()}" class="side"><List width={45} height={45}/></button>
+        </div>
+    </nav>
+{/if}
 
 {#if menustatus}
     <div transition:fade={{ duration: 300 }} style="position: absolute; z-index: 1;">
@@ -122,10 +124,12 @@
     <slot />
 </div>
 
-<footer>
-    <h2 class="ggj">要素の仮置き場</h2>
-    <DARK/>
-</footer>
+{#if $page.url.pathname != "/cl"}
+    <footer>
+        <h2 class="ggj">要素の仮置き場</h2>
+        <DARK/>
+    </footer>
+{/if}
 
 <div><Toaster/></div>
 
