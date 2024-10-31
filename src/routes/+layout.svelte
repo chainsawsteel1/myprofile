@@ -2,7 +2,7 @@
     import "ress"
     import "./global.css";
     import "./nprogress.css";
-    import "./color/monotone.css"
+    import "./color/mono.css"
     
     import { onNavigate } from "$app/navigation";
     import { navigating } from "$app/stores";
@@ -21,6 +21,7 @@
     import NProgress from "nprogress";
 
     import MENU from "../components/MENU.svelte";
+    import DARK from "../components/DARK.svelte";
 
     NProgress.configure({
     showSpinner: false // スピナーを表示しない
@@ -117,13 +118,18 @@
         transition:fade={{ duration: 300 }}
         style="position: absolute; z-index: 1;"
     >
-        <MENU></MENU>
+        <MENU/>
     </div>
 {/if}
 
 <div class="box">
     <slot />
 </div>
+
+<footer>
+    <h2 class="ggj">要素の仮置き場</h2>
+    <DARK/>
+</footer>
 
 <div><Toaster/></div>
 
@@ -163,10 +169,16 @@
         container-type: inline-size;
     }
 
+    footer {
+        padding: 1em;
+        background-color: var(--bg-color5);
+        margin-top: auto;
+    }
+
     .navbg {
         transition: .3s;
         background-color: var(--bg-color5);
-        backdrop-filter: blur(1.5em);
+        backdrop-filter: blur(var(--bl-px));
         position: fixed;
         width: 100%;
         height: 4em;
@@ -222,5 +234,20 @@
         height: 40px;
         border-radius: 250px;
         padding: 1px;
+        transition: .3s;
+    }
+
+    .box {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .ggj {
+        background:linear-gradient(90deg, #91AEAE, #BB92A6);
+        width: fit-content;	
+        -webkit-background-clip:text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
     }
 </style>

@@ -1,0 +1,23 @@
+@import '@radix-ui/colors/gray.css';
+@import '@radix-ui/colors/gray-dark.css';
+
+:root {
+    --bg-color: var(--gray-1);
+    --bg-color5: var(--gray-3);
+    --text-color: var(--gray-12);
+    --dtext-color: var(--gray-12);
+    --link-color: var(--gray-1);
+    --navtxt-color: var(--gray-11);
+    --btn-color: var(--gray-3);
+    --popup-color: var(--gray-1);
+    --hov-color: var(--gray-5);
+    --load-color: var(--gray-9);
+    --shadow-color: var(--gray-3);
+
+    --bl-px: 0
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}

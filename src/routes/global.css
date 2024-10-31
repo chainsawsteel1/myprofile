@@ -6,16 +6,6 @@ body {
     overflow-x: hidden;
 }
 
-button{
-    margin-top: .1em;
-    margin-bottom: .1em;
-    background-color: var(--btn-color);
-    color: var(--dtext-color);
-    transition: .3s;
-    padding: .4em;
-    min-width: 5em;
-}
-
 .swal2-confirm {
     margin-top: .1em;
     margin-bottom: .1em;
@@ -23,12 +13,21 @@ button{
     color: var(--dtext-color);
     transition: .3s;
     padding: .4em;
-    min-width: 5em;
+    min-width: 7em;
     border-radius: 0px;
 }
 
+button{
+    margin-top: .1em;
+    margin-bottom: .1em;
+    background-color: var(--btn-color);
+    color: var(--dtext-color);
+    transition: .3s;
+    padding: .4em;
+    min-width: 7em;
+}
+
 button:hover {
-    box-shadow: 7px 7px var(--shadow-color);
     background-color: var(--hov-color);
 }
 
@@ -41,12 +40,11 @@ a {
     color: var(--dtext-color);
     transition: .3s;
     padding: .4em;
-    min-width: 5em;
+    min-width: 7em;
     text-decoration: none;
 }
 
 a:hover {
-    box-shadow: 7px 7px var(--shadow-color);
     background-color: var(--hov-color);
 }
 
@@ -109,6 +107,6 @@ ul li {
 
 .swal2-container.swal2-center.swal2-backdrop-show {
     background: var(--bg-color5);
-    backdrop-filter: blur(1.5em);
+    backdrop-filter: blur(var(--bl-px));
     z-index: 0;
 }

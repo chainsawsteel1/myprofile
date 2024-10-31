@@ -13,7 +13,7 @@
 </script>
 
 <main>
-    <button class="old" id="old" on:click="{() => movepg("/blog/old")}" use:tippy={{content: '旧フォーマットで書かれたやつはこちら', placement: 'top'}}>旧</button>
+    <button class="old" on:click="{() => movepg("/blog/old")}" use:tippy={{content: '旧フォーマットで書かれたやつはこちら', placement: 'top'}}>旧</button>
 
     <article>
         <div class="lists">
@@ -61,14 +61,8 @@
     .old {
         position: fixed;
         bottom: 1em;
-        left: 1em;
+        right: 1em;
         top: unset;
-        margin: auto;
-        width: 5em;
-        height: 5em;
-        background-color: var(--bg-color5);
-        color: var(--txt-color);
-        backdrop-filter: blur(1.5em);
     }
 
     @container (min-width: 820px) {
@@ -81,11 +75,6 @@
         .lists {
             flex-direction: row;
             justify-content: center;
-        }
-
-        .old {
-            bottom: unset;
-            top: 5em;
         }
     }
 </style>

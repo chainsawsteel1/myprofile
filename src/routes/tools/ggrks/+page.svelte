@@ -75,7 +75,8 @@
 
 <style>
     .ggj {
-        background:linear-gradient(90deg, #4889F4, #EB493B, #FBBD0C, #4889F4, #078776, #DF5C39, #FF0839);	
+        background:linear-gradient(90deg, #4889F4, #EB493B, #FBBD0C);
+        width: fit-content;		
         -webkit-background-clip:text;
         background-clip: text;
         -webkit-text-fill-color: transparent;

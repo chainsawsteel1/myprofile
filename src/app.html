@@ -1,6 +1,23 @@
 <!doctype html>
 <html lang="jp">
 
+<script>
+	let userTheme = localStorage.theme;
+
+if (!['light', 'dark'].includes(userTheme)) {
+	const systemIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+	const detectedTheme = systemIsDark ? 'dark' : 'light';
+
+	localStorage.setItem('theme', detectedTheme);
+	userTheme = detectedTheme;
+}
+
+if (userTheme === 'dark') {
+	document.documentElement.classList.add('dark');
+}
+</script>
+
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
