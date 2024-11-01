@@ -2,10 +2,15 @@
     import { MetaTags } from "svelte-meta-tags";
     import { page } from "$app/stores";
 
-    import { Github, Activity, Discord, Share } from "svelte-bootstrap-icons";
+    import { Share, House } from "svelte-bootstrap-icons";
     import Swal from "sweetalert2";
 
     import { copy } from "$lib/utils";
+    import { movepg } from "$lib/utils";
+
+    import GitHub from "../../components/card/GitHub.svelte";
+    import Misskey from "../../components/card/Misskey.svelte";
+    import Discord from "../../components/card/Discord.svelte";
 
     export const share = () => {
         Swal.fire({
@@ -33,6 +38,11 @@
             <div class="share" on:click={share}>
                 <Share width={25} height={25}/>
             </div>
+            <!-- svelte-ignore a11y-click-events-have-key-events -->
+            <!-- svelte-ignore a11y-no-static-element-interactions -->
+            <div class="home" on:click={() => movepg("/")}>
+                <House width={25} height={25}/>
+            </div>
 
             <div>
                 <p class="link">chains link</p>
@@ -45,33 +55,9 @@
             </div>
 
             <div class="cards">
-                <a class="abox" href="https://github.com/chainsawsteel1" target="_blank">
-                    <div class="card">
-                        <div class="icon"><Github width={40} height={40}/></div>
-                        <div class="txt">
-                            <h3>GitHub</h3>
-                            <p>私の書いたクソコード</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="abox" href="https://www.yukkukomei.com/@chainsawsteel1" target="_blank">
-                    <div class="card">
-                        <div class="icon"><Activity width={40} height={40}/></div>
-                        <div class="txt">
-                            <h3>Misskey</h3>
-                            <p>ハイパー日常会話</p>
-                        </div>
-                    </div>
-                </a>
-                <a class="abox" href="https://discordapp.com/users/776037415320158209" target="_blank">
-                    <div class="card">
-                        <div class="icon"><Discord width={40} height={40}/></div>
-                        <div class="txt">
-                            <h3>Discord</h3>
-                            <p>DMはここに</p>
-                        </div>
-                    </div>
-                </a>
+                <GitHub>私の書いたクソコード</GitHub>
+                <Misskey>ハイパー日常会話</Misskey>
+                <Discord>DMはここに</Discord>
             </div>
 
             <div class="tags">
@@ -127,28 +113,6 @@
         flex-direction: column;
     }
 
-    .card {
-        transition: .3s;
-        display: flex;
-        background-color: var(--gray-5);
-        width: 95%;
-        padding: 10px;
-        border-radius: 10px;
-        margin: 5px;
-        height: 70px;
-    }
-    .card:hover {
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
-    }
-
-    .abox {
-        text-align: center;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
     footer {
         text-align: center;
     }
@@ -161,17 +125,6 @@
         min-width: unset;
         text-decoration: underline;
         box-shadow: unset;
-    }
-
-    .icon {
-        padding: 5px;
-        width: 40px;
-        height: 30px;
-    }
-
-    .txt {
-        text-align: left;
-        padding-left: 20px;
     }
 
     .tags {
@@ -202,6 +155,19 @@
         right: 1em;
     }
 
+    .home {
+        background-color: var(--gray-5);
+        position: fixed;
+        width: 45px;
+        height: 45px;
+        margin: auto;
+        border-radius: 9999px;
+        padding: 9px;
+        padding-left: 9px;
+        top: 1em;
+        left: 1em;
+    }
+
     @container (min-width: 520px) {
         article {
             margin: auto;
@@ -213,6 +179,10 @@
         .share {
             transform: translate(450px);
             right: unset;
+        }
+        .home {
+            transform: translate(5px);
+            left: unset;
         }
     }
 </style>

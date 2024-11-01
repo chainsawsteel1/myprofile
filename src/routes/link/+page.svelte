@@ -17,6 +17,14 @@
 
 <main>
     <article>
+        <div>
+            <h2>クイックシェア</h2>
+            <p>かんたんに共有できるように、よく見るリンクまとめのやつを作りました</p>
+            <button on:click={() => movepg("/cl")}>chains link</button>
+        </div>
+
+        <br>
+
         <div class="sns">
             <h2>SNS</h2>
 
