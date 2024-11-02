@@ -24,6 +24,22 @@
             <p>工事中</p>
         </div>
         <br>
+        <div class="created">
+            <h2>作ったもの</h2>
+            <div class="c1">
+                <a href="https://github.com/chainsawsteel1/myprofile">このサイト</a>
+                <img class="myimg" src="/screen/mysite.webp" alt="sukusyo">
+            </div>
+            <div class="c2">
+                <a href="https://github.com/chainsawsteel1/ggrbk-svelte">ggrbk-svelte</a>
+                <img class="myimg" src="/screen/ggr.webp" alt="sukusyo2">
+            </div>
+            <div>
+                <a href="https://github.com/chainsawsteel1/tsukichat-for-discord">tsukichat-for-discord</a>
+                <img class="myimg" src="/screen/tsuki.webp" alt="sukusyo3">
+            </div>
+        </div>
+        <br>
         <p>以下README.md</p>
         <hr>
         {@html md}
@@ -56,6 +72,13 @@
 
     .sp {
         display: none;
+    }
+
+    .myimg {
+        background-color: var(--btn-color);
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 10px;
     }
 
     @container (max-width: 820px) {
