@@ -41,7 +41,7 @@
             {@html md}
             <br>
             <p>こんな感じ</p>
-            <img src="mfm/image.png" alt="こんな感じに">
+            <img src="mfm/image.webp" alt="こんな感じに">
         </div>
     </article>
 </main>

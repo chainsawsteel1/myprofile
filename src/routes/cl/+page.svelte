@@ -196,7 +196,7 @@
         description: 'SNS、GitHub等のリンク',
         images: [
             {
-                url: "/cl/ogp.png",
+                url: "/cl/ogp.webp",
                 alt: "OGP画像",
             }
         ],
