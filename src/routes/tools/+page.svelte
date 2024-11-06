@@ -13,7 +13,7 @@
             <br>
             <button on:click="{() => movepg("/tools/mfm")}">MDtoMFM</button>
             <br>
-            <button on:click="{() => movepg("/tools/jk")}">オンラインじゃんけん</button>
+            <button on:click="{() => movepg("/tools/jk")}">じゃんけんオンライン</button>
             <br>
             <button on:click="{() => movepg("/test")}">テストページ</button>
         </div>

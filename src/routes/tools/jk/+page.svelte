@@ -54,7 +54,7 @@
 <main>
     <article>
         <div class="ggrks">
-            <h2 class="ggj">オンラインじゃんけん(オフライン)</h2>
+            <h2 class="ggj">じゃんけんオンライン(オフライン)</h2>
             <p>皆さん待望のオンラインじゃんけんです</p>
             <br>
             <div class="feeld">
@@ -125,12 +125,12 @@
 </style>
 
 <MetaTags
-    title="オンラインじゃんけん"
+    title="じゃんけんオンライン"
     openGraph={{
         type: 'website',
         url: $page.url.href,
-        title: 'オンラインじゃんけん',
-        description: '皆さん待望のオンラインじゃんけんです',
+        title: 'じゃんけんオンライン',
+        description: '皆さん待望のじゃんけんオンラインです',
         siteName: 'chainsのサイト'
     }}
 />

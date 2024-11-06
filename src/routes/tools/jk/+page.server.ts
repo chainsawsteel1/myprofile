@@ -1,16 +1,16 @@
-import { APP_NAME, PUSH_KEY, SECRET, CLUSTAR } from '$env/static/private';
+import PusherServer from "pusher";
 
-const key: string = PUSH_KEY;
-const cluster: string = CLUSTAR;
-const appId: string = APP_NAME;
-const secret: string = SECRET;
+let pusherInstance: PusherServer | null = null;
 
-import Pusher from "pusher";
-
-const pusher = new Pusher({
-    appId,
-    key,
-    secret,
-    cluster,
-    useTLS: true,
-});
+export const actions = () => {
+    if (!pusherInstance) {
+        pusherInstance = new PusherServer({
+            appId: process.env.PUSHER_APP_ID as string,
+            key: process.env.NEXT_PUBLIC_PUSHER_KEY as string,
+            secret: process.env.PUSHER_SECRET as string,
+            cluster: process.env.NEXT_PUBLIC_PUSHER_CLUSTER as string,
+            useTLS: true,
+        });
+    }
+    return pusherInstance;
+};
