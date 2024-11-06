@@ -25,7 +25,7 @@ export const copy = (data: string) => {
     }
     navigator.clipboard.writeText(data).then(
         () => {
-            toast.success("コピーしました", {
+            toast.success("コッピー成功", {
                 position: "bottom-center",
                 style: "border-radius: 0px; background: var(--btn-color); color: var(--dtext-color);"
             });

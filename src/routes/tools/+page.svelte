@@ -13,13 +13,17 @@
             <br>
             <button on:click="{() => movepg("/tools/mfm")}">MDtoMFM</button>
             <br>
+            <button on:click="{() => movepg("/tools/jk")}">オンラインじゃんけん</button>
+            <br>
             <button on:click="{() => movepg("/test")}">テストページ</button>
         </div>
     </article>
 </main>
 
 <style>
-
+    button {
+        min-width: 12em;
+    }
 </style>
 
 <MetaTags

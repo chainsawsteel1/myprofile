@@ -40,6 +40,7 @@
 		"markdown-tree-parser": "^0.12.4",
 		"microcms-js-sdk": "^3.1.2",
 		"nprogress": "^0.2.0",
+		"pusher": "^5.2.0",
 		"ress": "^5.0.2",
 		"sass-embedded": "^1.79.4",
 		"sharp": "^0.33.5",
