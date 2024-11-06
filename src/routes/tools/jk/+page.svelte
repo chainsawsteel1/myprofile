@@ -29,9 +29,9 @@
         let nannan: number = te - aite
         if (nannan == 0) {
             str = "あいこ"
-        } else if (nannan < 0) {
+        } else if (nannan == -1 || nannan == 2) {
             str = "勝ち"
-        } else if (nannan > 0) {
+        } else if (nannan == 1 || nannan == -2) {
             str = "負け"
         }
     }
