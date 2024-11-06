@@ -82,8 +82,6 @@
     </div>
 {/if}
 
-<h1 class="toph1">{title}</h1>
-
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true} class:shadow={scroll == true} class:hide={$page.url.pathname == "/cl"}></div>

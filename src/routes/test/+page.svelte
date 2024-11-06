@@ -22,8 +22,6 @@
 </script>
 
 <main>
-    <h1 class="toph1">TEST</h1>
-
     <article>
 
         <button on:click="{handleClick}">a</button>

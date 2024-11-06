@@ -40,13 +40,13 @@
         let hand: string
         switch (te) {
             case 1:
-                return "グー"
+                return "✊"
             case 2:
-                return "チョキ"
+                return "✌"
             case 3:
-                return "パー"
+                return "🖐"
             default:
-                return "グー"
+                return "✊"
         }
     }
 </script>
@@ -69,7 +69,7 @@
 
                 <div class="select" class:none={match != true || ahand} transition:blur={{ duration: 300 }}>
                     <p>どれか選択</p>
-                    <button on:click={() => te(1)}>グー</button><button on:click={() => te(2)}>チョキ</button><button on:click={() => te(3)}>パー</button>
+                    <button on:click={() => te(1)}>✊</button><button on:click={() => te(2)}>✌</button><button on:click={() => te(3)}>🖐</button>
                 </div>
 
                 {#if ahand}
