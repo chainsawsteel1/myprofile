@@ -81,6 +81,15 @@
 
             <br>
 
+            <div class="hgzt">
+                <img src="/link/hgzt.webp" alt="バナー画像 - hgzt" width="300px">
+                <br>
+                <a href="https://blog.hgzt.net/" target="_blank">はがね通信</a>
+                <p>よつは(hgzt23678)さんとtakeさんが管理しているブログサイト<br>今の所スマホ関係のものが多いです。</p>
+            </div>
+
+            <br>
+
             <button on:click="{sougo}">相互リンク募集中</button>
         </div>
     </article>
