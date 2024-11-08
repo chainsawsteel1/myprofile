@@ -15,8 +15,10 @@
         <button on:click="{() => movepg("/blog")}">BACK</button>
         <div class="title">
             <h2 use:transition={data.title}>{data.title}</h2>
+            <p use:transition={data.title + "d"}>{data.createdAt}</p>
             <img use:transition={data.title + "i"} src={data.eyecatch?.url} alt="" />
         </div>
+        <p>TODO: 目次</p>
 
         <br>
         <br>

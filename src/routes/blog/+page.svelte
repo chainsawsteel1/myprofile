@@ -5,6 +5,7 @@
     import { movepg } from '$lib/utils.js';
 
     import tippy from "svelte-tippy";
+    import 'tippy.js/dist/tippy.css';
 
     import { setupViewTransition } from 'sveltekit-view-transition';
     const { transition } = setupViewTransition();
@@ -16,12 +17,15 @@
     <button class="old" on:click="{() => movepg("/blog/old")}" use:tippy={{content: '旧フォーマットで書かれたやつはこちら', placement: 'top'}}>旧</button>
 
     <article>
+        <p>業務連絡: アイキャッチ画像は1200x630にすること</p>
         <div class="lists">
             {#each data.contents as content}
-                <button class="bg" on:click="{() => movepg("/blog/" + content.id)}">
-                    <p class="inbox" use:transition={content.title}>{content.title}</p>
-                    <img class="inbox" use:transition={content.title + "i"} src={content.eyecatch?.url} alt="" />
+                <button class="card" on:click="{() => movepg("/blog/" + content.id)}">
+                    <p use:transition={content.title}>{content.title}</p>
+                    <p use:transition={content.title + "d"}>{content.createdAt}</p>
+                    <img use:transition={content.title + "i"} src={content.eyecatch?.url} alt="" />
                 </button>
+                <br>
             {/each}
         </div>
     </article>
@@ -32,30 +36,15 @@
         width: 22em;
     }
 
-    .bg img {
+    .card img {
         object-fit: contain;
-        width: 100%;
-        height: 100%;
+        overflow: hidden;
+        height: 11em;
     }
 
-    .bg {
+    .card {
         height: 15em;
         width: 22em;
-        margin: 1em;
-        overflow: hidden;
-    }
-
-    .lists {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-    }
-
-    article {
-        justify-content: center;
-        align-items: center;
-        display: flex;
-        flex-direction: column;
     }
 
     .old {
@@ -64,19 +53,6 @@
         right: 1em;
         top: unset;
         box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
-    }
-
-    @container (min-width: 820px) {
-        article {
-            justify-content: left;
-            align-items: left;
-            flex-direction: row;
-        }
-
-        .lists {
-            flex-direction: row;
-            justify-content: center;
-        }
     }
 </style>
 

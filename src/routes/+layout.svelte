@@ -133,8 +133,6 @@
 
 <style>
     button {
-        background-color: rgba(0, 0, 0, 0);
-        color: var(--txt-color);
         margin: .8em;
         min-width: 5em;
     }
@@ -156,7 +154,7 @@
         height: 4em;
         margin: auto;
         position: fixed;
-        z-index: 1;
+        z-index: 2;
         text-align: center;
         left: 50%;
         top: 2em;
@@ -197,6 +195,7 @@
         position: fixed;
         bottom: 0%;
         z-index: 10;
+        text-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
     }
 
     .sp {

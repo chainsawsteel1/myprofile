@@ -1,29 +1,29 @@
 <!doctype html>
-<html lang="jp">
+<html lang="ja">
 
 <script>
 	let userTheme = localStorage.theme;
 
-if (!['light', 'dark'].includes(userTheme)) {
-	const systemIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+	if (!['light', 'dark'].includes(userTheme)) {
+		const systemIsDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-	const detectedTheme = systemIsDark ? 'dark' : 'light';
+		const detectedTheme = systemIsDark ? 'dark' : 'light';
 
-	localStorage.setItem('theme', detectedTheme);
-	userTheme = detectedTheme;
-}
+		localStorage.setItem('theme', detectedTheme);
+		userTheme = detectedTheme;
+	}
 
-if (userTheme === 'dark') {
-	document.documentElement.classList.add('dark');
-}
+	if (userTheme === 'dark') {
+		document.documentElement.classList.add('dark');
+	}
 </script>
 
 <head>
 	<meta charset="utf-8" />
 	<link rel="icon" href="%sveltekit.assets%/favicon.png" />
-    <link rel="apple-touch-icon" href="%sveltekit.assets%/appicon/apple-touch-icon.png" sizes="180x180">
-    <link rel="mask-icon" href="%sveltekit.assets%/appicon/mask-icon.svg" color="#FFFFFF">
-    <meta name="theme-color" content="#c9c1ff" />
+	<link rel="apple-touch-icon" href="%sveltekit.assets%/appicon/apple-touch-icon.png" sizes="180x180">
+	<link rel="mask-icon" href="%sveltekit.assets%/appicon/mask-icon.svg" color="#FFFFFF">
+	<meta name="theme-color" content="#c9c1ff" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	%sveltekit.head%
 </head>
@@ -45,6 +45,7 @@ if (userTheme === 'dark') {
 		color: white;
 		z-index: 1000;
 		padding: 10px;
+		box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
 	}
 </style>
 

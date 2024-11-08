@@ -53,41 +53,41 @@
 
 <main>
     <article>
-        <div class="ggrks">
+        <div class="jkonline">
             <h2 class="ggj">じゃんけんオンライン(オフライン)</h2>
             <p>皆さん待望のオンラインじゃんけんです</p>
             <br>
             <div class="feeld">
 
                 {#if match != true}
-                    <button on:click={() => match = true} transition:blur={{ duration: 300 }}>マッチング開始ボタン</button>
+                    <button on:click={() => match = true}>マッチング開始ボタン</button>
                 {/if}
 
                 <div class="wait none">
                     マッチングなう
                 </div>
 
-                <div class="select" class:none={match != true || ahand} transition:blur={{ duration: 300 }}>
+                <div class="select" class:none={match != true || ahand}>
                     <p>どれか選択</p>
                     <button on:click={() => te(1)}>✊</button><button on:click={() => te(2)}>✌</button><button on:click={() => te(3)}>🖐</button>
                 </div>
 
                 {#if ahand}
-                    <div class="hand" transition:blur={{ duration: 300 }}>
+                    <div class="hand">
                         <p>貴方の手/相手の手</p>
                         <p>{じゃんけんコンバーター(you)}/{ahand}</p>
                     </div>
                 {/if}
 
                 {#if str}
-                    <div class="result" transition:blur={{ duration: 300 }}>
+                    <div class="result">
                         <p>結果</p>
                         <p>{str}</p>
                     </div>
                 {/if}
 
                 {#if str}
-                    <div class="reset" transition:blur={{ duration: 300 }}>
+                    <div class="reset">
                         <button on:click={() => {
                             match = false
                             ahand = ""

@@ -23,7 +23,7 @@
 
 <main>
     <article>
-        <div class="ggrks">
+        <div class="mdmfm">
             <h2 class="ggj">MarkDown to MfM(工事中)</h2>
             <p>マークダウンをMfMに変換します</p>
             <br>
@@ -41,7 +41,7 @@
             {@html md}
             <br>
             <p>こんな感じ</p>
-            <img src="mfm/image.webp" alt="こんな感じに">
+            <img class="myimg" src="mfm/image.webp" alt="こんな感じに">
         </div>
     </article>
 </main>

@@ -74,13 +74,6 @@
         display: none;
     }
 
-    .myimg {
-        background-color: var(--btn-color);
-        padding: 10px;
-        margin-top: 10px;
-        margin-bottom: 10px;
-    }
-
     @container (max-width: 820px) {
         .icon {
             width: 200px;

@@ -92,5 +92,12 @@ ul li {
 .swal2-container.swal2-center.swal2-backdrop-show {
     background: var(--bg-color5);
     backdrop-filter: blur(var(--bl-px));
-    z-index: 0;
+    z-index: 1;
+}
+
+.myimg {
+    background-color: var(--btn-color);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
