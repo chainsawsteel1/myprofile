@@ -17,7 +17,7 @@
     export const sougo = () => {
         Swal.fire({
             imageUrl: "/link/chains.webp",
-            html: `サイト名: chainsのサイト<br>リンク: https://chainsawsteel1.vercel.app<br>相互リンクに関する連絡はSNS欄の下2つのどれかへお願いします。`,
+            html: `サイト名: chainsのサイト<br>リンク: https://chainsawsteel1.vercel.app<br>相互リンクに関する連絡はSNS欄の真ん中2つのどれかへお願いします。`,
             imageWidth: "300px",
             color: "var(--text-color)",
             background: "rgba(0, 0, 0, 0)",
@@ -49,6 +49,10 @@
             <br>
 
             <button on:click="{discordName}">Discord</button>
+
+            <br>
+
+            <a rel="me" href="https://fedibird.com/@chains" target="_blank">Fedibird</a>
 
             <br>
 

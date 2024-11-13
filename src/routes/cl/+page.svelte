@@ -11,6 +11,7 @@
     import GitHub from "../../components/card/GitHub.svelte";
     import Misskey from "../../components/card/Misskey.svelte";
     import Discord from "../../components/card/Discord.svelte";
+    import Mastodon from "../../components/card/Mastodon.svelte";
 
     export const share = () => {
         Swal.fire({
@@ -56,6 +57,7 @@
 
             <div class="cards">
                 <GitHub>私の書いたクソコード</GitHub>
+                <Mastodon>ハイパーメイン</Mastodon>
                 <Misskey>ハイパー日常会話</Misskey>
                 <Discord>DMはここに</Discord>
             </div>
@@ -66,6 +68,9 @@
                 </div>
                 <div class="tag">
                     Misskey <small>MMMC</small>
+                </div>
+                <div class="tag">
+                    Mastodon <small>Fedibird</small>
                 </div>
             </div>
 
