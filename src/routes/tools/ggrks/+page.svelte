@@ -47,13 +47,13 @@
 
             <br>
 
-            <a href="https://www.google.com/search?q={search}" target="_blank">Google</a>
+            <a class="abtn" href="https://www.google.com/search?q={search}" target="_blank">Google</a>
             <br>
-            <a href="https://www.bing.com/search?q={search}" target="_blank">Bing</a>
+            <a class="abtn" href="https://www.bing.com/search?q={search}" target="_blank">Bing</a>
             <br>
-            <a href="https://duckduckgo.com/?q={search}" target="_blank">DDG</a>
+            <a class="abtn" href="https://duckduckgo.com/?q={search}" target="_blank">DDG</a>
             <br>
-            <a href="https://search.yahoo.com/search?q={search}" target="_blank">Yahoo!</a>
+            <a class="abtn" href="https://search.yahoo.com/search?q={search}" target="_blank">Yahoo!</a>
 
             <br>
             <br>
