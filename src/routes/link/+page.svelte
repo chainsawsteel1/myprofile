@@ -44,7 +44,7 @@
         <div class="sns" id="sns">
             <h2>SNS</h2>
 
-            <a href="https://github.com/chainsawsteel1" target="_blank">GitHub</a>
+            <a class="abtn" href="https://github.com/chainsawsteel1" target="_blank">GitHub</a>
 
             <br>
 
@@ -52,11 +52,11 @@
 
             <br>
 
-            <a rel="me" href="https://fedibird.com/@chains" target="_blank">Fedibird</a>
+            <a class="abtn" rel="me" href="https://fedibird.com/@chains" target="_blank">Fedibird</a>
 
             <br>
 
-            <a href="https://www.yukkukomei.com/@chainsawsteel1" target="_blank">MMMC</a>
+            <a class="abtn" href="https://www.yukkukomei.com/@chainsawsteel1" target="_blank">MMMC</a>
         </div>
         
         <br>
@@ -70,7 +70,7 @@
             <div class="natsumi">
                 <img src="/link/natsumi.webp" alt="バナー画像 - natsumi" width="300px">
                 <br>
-                <a href="https://natumi.tkngh.jp/" target="_blank">Der Faulpelzesversteck(デァ・ファオルペルツェスファーシュテック)</a>
+                <a class="abtn" href="https://natumi.tkngh.jp/" target="_blank">Der Faulpelzesversteck(デァ・ファオルペルツェスファーシュテック)</a>
                 <p>夏見馨さんが管理しているリンク集兼日記サイト<br>Fediverseの世界によく居る方です。作品が好みの感じで最高です。</p>
             </div>
 
@@ -79,7 +79,7 @@
             <div class="hgzt">
                 <img src="/link/hgzt.webp" alt="バナー画像 - hgzt" width="300px">
                 <br>
-                <a href="https://blog.hgzt.net/" target="_blank">はがね通信</a>
+                <a class="abtn" href="https://blog.hgzt.net/" target="_blank">はがね通信</a>
                 <p>よつは(hgzt23678)さんとtakeさんが管理しているブログサイト<br>今の所スマホ関係のものが多いです。</p>
             </div>
 
