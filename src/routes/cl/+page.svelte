@@ -137,6 +137,7 @@
         margin-left: .7em;
         display: flex;
         width: 100%;
+        flex-wrap: wrap;
     }
 
     .tag {
@@ -145,6 +146,7 @@
         width: fit-content;
         padding: 5px;
         margin-right: .5em;
+        margin-bottom: .5em;
     }
 
     .share {
