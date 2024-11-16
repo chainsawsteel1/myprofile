@@ -84,7 +84,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true} class:shadow={scroll == true} class:hide={$page.url.pathname == "/cl"}></div>
+<div class="navbg" on:click={() => toggleoff()} class:navactive={menustatus == true} class:nowbg={scroll == true} class:hide={$page.url.pathname == "/cl"}></div>
 
 {#if $page.url.pathname != "/cl"}
     <nav>
@@ -173,7 +173,6 @@
 
     .navbg {
         transition: .3s;
-        background-color: var(--bg-color5);
         backdrop-filter: blur(var(--bl-px));
         position: fixed;
         width: 100%;
@@ -183,7 +182,13 @@
         z-index: 1;
     }
 
+    .nowbg {
+        background-color: var(--bg-color5);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
+    }
+
     .navactive {
+        background-color: var(--bg-color5);
         height: 100%;
     }
 
@@ -250,9 +255,5 @@
         -webkit-background-clip:text;
         background-clip: text;
         -webkit-text-fill-color: transparent;
-    }
-
-    .shadow {
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1), 0 3px 3px rgba(0, 0, 0, 0.05);
     }
 </style>
