@@ -12,6 +12,7 @@
     import Misskey from "../../components/card/Misskey.svelte";
     import Discord from "../../components/card/Discord.svelte";
     import Mastodon from "../../components/card/Mastodon.svelte";
+    import Bsky from "../../components/card/Bsky.svelte";
 
     export const share = () => {
         Swal.fire({
@@ -59,18 +60,22 @@
                 <GitHub>私の書いたクソコード</GitHub>
                 <Mastodon>ハイパーメイン</Mastodon>
                 <Misskey>ハイパー日常会話</Misskey>
+                <Bsky>全く使わない</Bsky>
                 <Discord>DMはここに</Discord>
             </div>
 
             <div class="tags">
                 <div class="tag">
-                    GitHub <small>PY / SVELTE</small>
+                    GitHub <small>Python / Svelte</small>
                 </div>
                 <div class="tag">
                     Misskey <small>MMMC</small>
                 </div>
                 <div class="tag">
                     Mastodon <small>Fedibird</small>
+                </div>
+                <div class="tag">
+                    Bluesky <small>bsky.social</small>
                 </div>
             </div>
 
@@ -85,8 +90,10 @@
 
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Birthstone&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
 
     article {
+        font-family: "RocknRoll One", sans-serif;
         padding-top: .5em;
         width: 95%;
     }
@@ -120,6 +127,7 @@
 
     footer {
         text-align: center;
+        margin-bottom: 1em;
     }
 
     a {
